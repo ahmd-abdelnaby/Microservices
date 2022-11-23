@@ -1,0 +1,24 @@
+D:\New folder (14)\Microservices\Common\Logging\bin\Debug\net6.0\Logging.deps.json
+D:\New folder (14)\Microservices\Common\Logging\bin\Debug\net6.0\Logging.dll
+D:\New folder (14)\Microservices\Common\Logging\bin\Debug\net6.0\ref\Logging.dll
+D:\New folder (14)\Microservices\Common\Logging\bin\Debug\net6.0\Logging.pdb
+D:\New folder (14)\Microservices\Common\Logging\obj\Debug\net6.0\Logging.csproj.AssemblyReference.cache
+D:\New folder (14)\Microservices\Common\Logging\obj\Debug\net6.0\Logging.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder (14)\Microservices\Common\Logging\obj\Debug\net6.0\Logging.AssemblyInfoInputs.cache
+D:\New folder (14)\Microservices\Common\Logging\obj\Debug\net6.0\Logging.AssemblyInfo.cs
+D:\New folder (14)\Microservices\Common\Logging\obj\Debug\net6.0\Logging.csproj.CoreCompileInputs.cache
+D:\New folder (14)\Microservices\Common\Logging\obj\Debug\net6.0\Logging.dll
+D:\New folder (14)\Microservices\Common\Logging\obj\Debug\net6.0\ref\Logging.dll
+D:\New folder (14)\Microservices\Common\Logging\obj\Debug\net6.0\Logging.pdb
+C:\Users\mohamed.abdaleem\source\repos\Microservices\Common\Logging\bin\Debug\net6.0\Logging.deps.json
+C:\Users\mohamed.abdaleem\source\repos\Microservices\Common\Logging\bin\Debug\net6.0\Logging.dll
+C:\Users\mohamed.abdaleem\source\repos\Microservices\Common\Logging\bin\Debug\net6.0\ref\Logging.dll
+C:\Users\mohamed.abdaleem\source\repos\Microservices\Common\Logging\bin\Debug\net6.0\Logging.pdb
+C:\Users\mohamed.abdaleem\source\repos\Microservices\Common\Logging\obj\Debug\net6.0\Logging.csproj.AssemblyReference.cache
+C:\Users\mohamed.abdaleem\source\repos\Microservices\Common\Logging\obj\Debug\net6.0\Logging.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mohamed.abdaleem\source\repos\Microservices\Common\Logging\obj\Debug\net6.0\Logging.AssemblyInfoInputs.cache
+C:\Users\mohamed.abdaleem\source\repos\Microservices\Common\Logging\obj\Debug\net6.0\Logging.AssemblyInfo.cs
+C:\Users\mohamed.abdaleem\source\repos\Microservices\Common\Logging\obj\Debug\net6.0\Logging.csproj.CoreCompileInputs.cache
+C:\Users\mohamed.abdaleem\source\repos\Microservices\Common\Logging\obj\Debug\net6.0\Logging.dll
+C:\Users\mohamed.abdaleem\source\repos\Microservices\Common\Logging\obj\Debug\net6.0\ref\Logging.dll
+C:\Users\mohamed.abdaleem\source\repos\Microservices\Common\Logging\obj\Debug\net6.0\Logging.pdb
