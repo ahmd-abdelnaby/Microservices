@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OrderApplication;
 using OrderApplication.Commands;
@@ -20,6 +21,7 @@ namespace OrderApi.Controllers
 
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IEnumerable<OrderModel>> GetAsync()
         {
