@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Orders</h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Cost</th>
+    <th>Date</th>
+  </tr>
+  <tr *ngFor="let item of data">
+    <td>{{item.id}}</td>
+    <td>{{item.cost}}</td>
+    <td>{{item.date}}</td>
+  </tr>
+</table>
+
+</body>
+</html>

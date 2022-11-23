@@ -4,9 +4,37 @@ using Serilog;
 using HealthChecks.System;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using HealthChecks.UI.Client;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    }).AddJwtBearer(o =>
+    {
+        o.Authority = "http://localhost:5000";
+        o.Audience = "resourceapi";
+        o.RequireHttpsMetadata = false;
+    });
+
+builder.Services.AddAuthorization(options =>
+    {
+        options.AddPolicy("ApiReader", policy => policy.RequireClaim("scope", "api.read"));
+        options.AddPolicy("Consumer", policy => policy.RequireClaim(ClaimTypes.Role, "consumer"));
+    }
+);
+
 builder.Host.UseSerilog(LoggingConfigurtion.ConfigureLogger);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        builder => builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
 builder.Services.AddTransient<LoggingService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -29,8 +57,9 @@ app.UseHealthChecks("/hc", new HealthCheckOptions()
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 });
 
+app.UseCors("CorsPolicy");
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

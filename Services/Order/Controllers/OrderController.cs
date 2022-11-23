@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace OrderApi.Controllers
 {
@@ -13,6 +14,7 @@ namespace OrderApi.Controllers
             _logger = logger;
         }
 
+        [Authorize]
         [HttpGet]
         public IEnumerable<Order> Get()
         {

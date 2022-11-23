@@ -6,9 +6,10 @@ import { IndexComponent } from './index/index.component';
 import { TopSecretService }  from '../top-secret/top-secret.service';
 
 import { TopSecretRoutingModule } from './top-secret.routing-module';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
-  declarations: [IndexComponent],
+  declarations: [IndexComponent, OrdersComponent],
   providers: [ TopSecretService],
   imports: [
     CommonModule,  

@@ -25,4 +25,16 @@ export class TopSecretService extends BaseService {
 
     return this.http.get(this.configService.resourceApiURI + '/values', httpOptions).pipe(catchError(this.handleError));
   }
+
+  getOrders(token: string) {   
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': token
+      })
+    };
+
+    return this.http.get('https://localhost:7158/orderapi', httpOptions).pipe(catchError(this.handleError));
+  }
 }

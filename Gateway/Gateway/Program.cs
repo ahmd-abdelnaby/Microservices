@@ -1,5 +1,8 @@
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Gateway
 {
@@ -7,6 +10,8 @@ namespace Gateway
     {
         public static void Main(string[] args)
         {
+            var authenticationProviderKey = "IdentityApiKey";
+
             new WebHostBuilder()
             .UseKestrel()
             .UseContentRoot(Directory.GetCurrentDirectory())
@@ -20,6 +25,23 @@ namespace Gateway
                     .AddEnvironmentVariables();
             })
             .ConfigureServices(s => {
+                s.AddCors(options =>
+                {
+                    options.AddPolicy("CorsPolicy",
+                        builder => builder.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader());
+                });
+                s.AddAuthentication()
+                     .AddJwtBearer(authenticationProviderKey, x =>
+                     {
+                         x.Authority = "http://localhost:5000"; 
+                         x.RequireHttpsMetadata = false;
+                         x.TokenValidationParameters = new TokenValidationParameters
+                         {
+                             ValidateAudience = false
+                         };
+                     });
                 s.AddOcelot();
             })
             .ConfigureLogging((hostingContext, logging) =>
@@ -29,6 +51,8 @@ namespace Gateway
             .UseIISIntegration()
             .Configure(app =>
             {
+                app.UseCors("CorsPolicy");
+                app.UseAuthentication();
                 app.UseOcelot().Wait();
             })
             .Build()
