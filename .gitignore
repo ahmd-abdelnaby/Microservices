@@ -11,3 +11,10 @@
 /Resource.Api/Resource.Api/obj/Debug/netcoreapp3.1
 /Resource.Api/Resource.Api/obj
 /AuthServer/.vs/AuthServer
+/Services/Order/obj/Debug/net6.0
+/Resource.Api/.vs/Resource.Api
+/Services/Product/obj/Debug/net6.0
+/Identityserver/AuthServer/obj/Debug/net5.0
+/Identityserver/AuthServer.Infrastructure/obj/Debug/netcoreapp3.1
+/Services/Resource.Api/obj/Debug/netcoreapp3.1
+/.vs/Microservices/DesignTimeBuild
