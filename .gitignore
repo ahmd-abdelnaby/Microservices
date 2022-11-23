@@ -19,3 +19,9 @@
 /Services/Resource.Api/obj/Debug/netcoreapp3.1
 /.vs/Microservices/DesignTimeBuild
 /.vs/Microservices/project-colors.json
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
