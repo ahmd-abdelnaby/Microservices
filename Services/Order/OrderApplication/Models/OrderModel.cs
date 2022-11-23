@@ -1,6 +1,6 @@
-namespace OrderApi
+namespace OrderApplication
 {
-    public class Order
+    public class OrderModel
     {
         public int id { get; set; }
         public decimal? cost { get; set; }

@@ -1,6 +1,6 @@
-namespace ProductApi
+namespace ProductAppliction
 {
-    public class Product
+    public class ProductModel
     {
         public int id { get; set; }
         public string Name { get; set; }

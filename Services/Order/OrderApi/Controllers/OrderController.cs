@@ -1,4 +1,8 @@
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using OrderApplication;
+using OrderApplication.Commands;
+using OrderApplication.Queries;
 
 namespace OrderApi.Controllers
 {
@@ -7,42 +11,33 @@ namespace OrderApi.Controllers
     public class OrderController : ControllerBase
     {
         private readonly ILogger<OrderController> _logger;
+        private readonly IMediator _mediator;
 
-        public OrderController(ILogger<OrderController> logger)
+        public OrderController(ILogger<OrderController> logger, IMediator mediator)
         {
             _logger = logger;
+            _mediator = mediator;
+
         }
 
         [HttpGet]
-        public IEnumerable<Order> Get()
+        public async Task<IEnumerable<OrderModel>> GetAsync()
         {
-            return Enumerable.Range(1, 5).Select(index => new Order
-            {
-                Date = DateTime.Now.AddDays(index),
-                cost=100,
-                id=1
-
-            })
-            .ToArray();
+            return await _mediator.Send(new GetAllOrdersQuery());
         }
         [HttpGet]
         [Route("{id}")]
-        public Order GetById(int id)
+        public async Task<OrderModel> GetById(int id)
         {
-            return  new Order
-            {
-                Date = DateTime.Now,
-                cost = 100,
-                id = id
-            }
-            ;
+            return await _mediator.Send(new GetOrderByIdQuery(id));
+
         }
         [HttpPost]
-        public bool Post(Order order)
+        public async Task<bool> PostAsync(OrderModel order)
         {
             try
             {
-                _logger.LogInformation("save order:" + order.id);
+                await _mediator.Send(new AddOrderCommand(order));
                 return true;
             }catch(Exception ex)
             {

@@ -1,4 +1,9 @@
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using OrderApplication.Queries;
+using ProductApplication.Queries;
+using ProductAppliction;
+using ProductAppliction.Commands;
 
 namespace ProductApi.Controllers
 {
@@ -8,39 +13,35 @@ namespace ProductApi.Controllers
     {
 
         private readonly ILogger<ProductController> _logger;
-        public ProductController(ILogger<ProductController> logger)
+        private readonly IMediator _mediator;
+
+        public ProductController(ILogger<ProductController> logger, IMediator mediator)
         {
             _logger = logger;
+            _mediator = mediator;
+
         }
 
         [HttpGet]
-        public IEnumerable<Product> Get()
+        public async Task<IEnumerable<ProductModel>> GetAsync()
         {
-            return Enumerable.Range(1, 5).Select(index => new Product
-            {
-                Date = DateTime.Now.AddDays(index),
-                 id=1,
-                  Name="food"
-            })
-            .ToArray();
+            return await _mediator.Send(new GetAllProductsQuery());
+
         }
         [HttpGet]
         [Route("{id}")]
-        public Product GetById(int id)
+        public async Task<ProductModel> GetByIdAsync(int id)
         {
-            return new Product
-            {
-                Date = DateTime.Now,
-                id = id,
-                Name = "food"
-            }
-            ;
+            return await _mediator.Send(new GetProductByIdQuery(id));
+
         }
         [HttpPost]
-        public bool Post(Product product)
+        public async Task<bool> PostAsync(ProductModel product)
         {
             try
             {
+                await _mediator.Send(new AddProductCommand(product));
+
                 _logger.LogInformation("save product:" + product.Name);
                 return true;
             }
