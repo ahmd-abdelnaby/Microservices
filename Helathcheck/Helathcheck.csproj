@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AspNet.HealthChecks.UI.Client" Version="1.0.0" />
     <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="6.0.2" />
     <PackageReference Include="AspNetCore.HealthChecks.System" Version="6.0.5" />
     <PackageReference Include="AspNetCore.HealthChecks.UI" Version="6.0.5" />
