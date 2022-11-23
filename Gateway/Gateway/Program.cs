@@ -19,8 +19,7 @@ namespace Gateway
             {
                 config
                     .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
-                    .AddJsonFile("ocelot.json")
-                     .AddOcelot("OcelotConfigrations", hostingContext.HostingEnvironment)
+                    .AddOcelot("OcelotConfigrations", hostingContext.HostingEnvironment)
 
                     .AddEnvironmentVariables();
             })
