@@ -18,7 +18,7 @@ builder.Services.AddAuthentication(options =>
         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     }).AddJwtBearer(o =>
     {
-        o.Authority = "http://localhost:5000";
+        o.Authority = "https://localhost:5000"; // identity
         o.Audience = "resourceapi";
         o.RequireHttpsMetadata = false;
     });

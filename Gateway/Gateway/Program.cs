@@ -34,7 +34,7 @@ namespace Gateway
                 s.AddAuthentication()
                      .AddJwtBearer(authenticationProviderKey, x =>
                      {
-                         x.Authority = "http://localhost:5000"; 
+                         x.Authority = "https://localhost:5000"; 
                          x.RequireHttpsMetadata = false;
                          x.TokenValidationParameters = new TokenValidationParameters
                          {

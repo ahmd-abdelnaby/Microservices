@@ -9,6 +9,10 @@
     <PackageReference Include="microsoft.aspnetcore.identity.entityframeworkcore" Version="2.2.0" />
     <PackageReference Include="microsoft.entityframeworkcore.design" Version="2.2.3" />
     <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="2.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
