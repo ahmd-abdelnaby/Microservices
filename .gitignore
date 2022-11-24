@@ -25,3 +25,8 @@ _ReSharper.*
 bin
 obj
 packages
+/.vs/VSWorkspaceState.json
+/.vs/slnx.sqlite-journal
+/.vs/slnx.sqlite
+/.vs/ProjectSettings.json
+/.vs/Microservices/v17/.futdcache.v1

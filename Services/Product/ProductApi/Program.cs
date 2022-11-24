@@ -5,10 +5,11 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using HealthChecks.UI.Client;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 using ProductAppliction;
 using Serilog;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAuthentication(options =>
