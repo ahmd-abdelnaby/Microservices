@@ -23,7 +23,7 @@ export class TopSecretService extends BaseService {
       })
     };
 
-    return this.http.get(this.configService.resourceApiURI + '/values', httpOptions).pipe(catchError(this.handleError));
+    return this.http.get('https://localhost:7158/valuesapi', httpOptions).pipe(catchError(this.handleError));
   }
 
   getOrders(token: string) {   
