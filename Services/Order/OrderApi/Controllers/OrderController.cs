@@ -21,7 +21,8 @@ namespace OrderApi.Controllers
 
         }
 
-        [Authorize]
+        [Authorize(Policy = "Consumer")]
+        [Authorize(Roles = "consumer")]
         [HttpGet]
         public async Task<IEnumerable<OrderModel>> GetAsync()
         {
