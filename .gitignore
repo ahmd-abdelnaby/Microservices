@@ -33,3 +33,5 @@ packages
 /.vs/Microservices/FileContentIndex
 /Services/Product/ProductApi/logs
 /Services/Order/OrderApi/logs
+/.vs
+/Identityserver/AuthServerInfrastructure/Properties

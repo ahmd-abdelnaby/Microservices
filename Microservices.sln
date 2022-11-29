@@ -37,13 +37,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductAppliction", "Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthServerInfrastructure", "Identityserver\AuthServerInfrastructure\AuthServerInfrastructure.csproj", "{6352A360-C91A-426B-9BAB-A12D576D4BEB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HealthCheck", "HealthCheck", "{3912BAC6-9C49-458C-B48E-7988B7F18842}"
-	ProjectSection(SolutionItems) = preProject
-		HealthCheck.cs = HealthCheck.cs
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCheck", "Common\HealthCheck\HealthCheck.csproj", "{D939DA12-BCDA-4703-B6A4-368278CCCC3F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,10 +79,6 @@ Global
 		{6352A360-C91A-426B-9BAB-A12D576D4BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6352A360-C91A-426B-9BAB-A12D576D4BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6352A360-C91A-426B-9BAB-A12D576D4BEB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D939DA12-BCDA-4703-B6A4-368278CCCC3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D939DA12-BCDA-4703-B6A4-368278CCCC3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D939DA12-BCDA-4703-B6A4-368278CCCC3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D939DA12-BCDA-4703-B6A4-368278CCCC3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,8 +96,6 @@ Global
 		{59CC600D-0068-43C1-992E-464317B1DC28} = {5E0B812D-735C-478C-9A43-B068C12A41ED}
 		{181AED08-4DE6-4710-8A26-816DF3F01F57} = {9826C293-61DE-4B1F-87F6-7FC8E1BD9C87}
 		{6352A360-C91A-426B-9BAB-A12D576D4BEB} = {98103090-5693-4303-9E42-0E1A5342D554}
-		{3912BAC6-9C49-458C-B48E-7988B7F18842} = {B4CF6534-C485-4FB7-8CA5-805EA310401F}
-		{D939DA12-BCDA-4703-B6A4-368278CCCC3F} = {3912BAC6-9C49-458C-B48E-7988B7F18842}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82EF3361-5F60-414B-ABAA-BEAD24240B3E}
