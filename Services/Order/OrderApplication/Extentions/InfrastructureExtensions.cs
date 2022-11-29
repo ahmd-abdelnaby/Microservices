@@ -7,6 +7,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Builder;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Authentication;
 
 public static class InfrastructureExtensions
 {
@@ -47,6 +48,8 @@ public static class InfrastructureExtensions
                     diskStorageOptions.AddDrive(@"C:\", 500000000000000000);
                 }, name: "My Drive", HealthStatus.Unhealthy);
         services.AddTransient<LoggingService>();
+        services.AddTransient<LoggingService>();
+
 
         return services;
     }

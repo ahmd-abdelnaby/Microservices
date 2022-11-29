@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Serilog;
 
 namespace Logging
 {
@@ -8,11 +8,11 @@ namespace Logging
         {
             if (response.IsSuccessStatusCode)
             {
-                logger.LogDebug("Received a success response from {Url}", response.RequestMessage.RequestUri);
+                logger.Debug("Received a success response from {Url}", response.RequestMessage.RequestUri);
             }
             else
             {
-                logger.LogWarning("Received a non-success status code {StatusCode} from {Url}",
+                logger.Warning("Received a non-success status code {StatusCode} from {Url}",
                     (int)response.StatusCode, response.RequestMessage.RequestUri);
             }
         }

@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Serilog;
 using System.Net;
 using System.Net.Sockets;
 
@@ -6,11 +6,11 @@ namespace Logging
 {
     public class LoggingService : DelegatingHandler
     {
-        private readonly ILogger<LoggingService> logger;
+        private readonly ILogger logger;
 
-        public LoggingService(ILogger<LoggingService> logger)
+        public LoggingService(ILogger logger)
         {
-            this.logger = logger;
+           this.logger = logger;
         }
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
@@ -29,7 +29,7 @@ namespace Logging
                     ? request.RequestUri.DnsSafeHost
                     : $"{request.RequestUri.DnsSafeHost}:{request.RequestUri.Port}";
 
-                logger.LogCritical(ex, "Unable to connect to {Host}. Please check the " +
+                logger.Fatal(ex, "Unable to connect to {Host}. Please check the " +
                                         "configuration to ensure the correct URL for the service " +
                                         "has been configured.", hostWithPort);
             }
