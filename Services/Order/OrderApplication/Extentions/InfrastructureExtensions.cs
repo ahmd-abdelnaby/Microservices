@@ -4,12 +4,15 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using HealthChecks.System;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Builder;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
 public static class InfrastructureExtensions
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
-        services.AddTransient<LoggingService>();
+
         services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -43,7 +46,22 @@ public static class InfrastructureExtensions
                 {
                     diskStorageOptions.AddDrive(@"C:\", 500000000000000000);
                 }, name: "My Drive", HealthStatus.Unhealthy);
+        services.AddTransient<LoggingService>();
 
         return services;
     }
-}
+    public static WebApplication UseInfrastructure(this WebApplication app)
+    {
+        app.UseHealthChecks("/hc", new HealthCheckOptions()
+        {
+            Predicate = _ => true,
+            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+        });
+        app.UseCors("CorsPolicy");
+        app.UseHttpsRedirection();
+        app.UseAuthentication();
+        app.UseAuthorization();
+        app.MapControllers();
+        return app;
+    }
+    }

@@ -4,6 +4,9 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using HealthChecks.System;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using HealthChecks.UI.Client;
 
 public static class InfrastructureExtensions
 {
@@ -44,5 +47,19 @@ public static class InfrastructureExtensions
                 }, name: "My Drive", HealthStatus.Unhealthy);
 
         return services;
+    }
+    public static WebApplication UseInfrastructure(this WebApplication app)
+    {
+        app.UseHealthChecks("/hc", new HealthCheckOptions()
+        {
+            Predicate = _ => true,
+            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+        });
+        app.UseCors("CorsPolicy");
+        app.UseHttpsRedirection();
+        app.UseAuthentication();
+        app.UseAuthorization();
+        app.MapControllers();
+        return app;
     }
 }

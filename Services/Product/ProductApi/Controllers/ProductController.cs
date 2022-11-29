@@ -25,6 +25,7 @@ namespace ProductApi.Controllers
         [HttpGet]
         public async Task<IEnumerable<ProductModel>> GetAsync()
         {
+            throw new Exception("some error throw");
             return await _mediator.Send(new GetAllProductsQuery());
 
         }
