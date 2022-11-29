@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace AuthServer.Infrastructure.Data.Identity
+namespace AuthServerInfrastructure.Data.Identity
 {
     public class AppIdentityDbContextFactory : DesignTimeDbContextFactoryBase<AppIdentityDbContext>
     {

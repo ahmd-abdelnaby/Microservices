@@ -4,7 +4,7 @@ using IdentityServer4.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace AuthServer.Infrastructure.Data.Identity
+namespace AuthServerInfrastructure.Data.Identity
 {
     public class PersistedGrantDbContextFactory : IDesignTimeDbContextFactory<PersistedGrantDbContext>
     {

@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using AuthServer.Infrastructure.Constants;
-using AuthServer.Infrastructure.Data.Identity;
+using AuthServerInfrastructure.Constants;
+using AuthServerInfrastructure.Data.Identity;
 using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Extensions;

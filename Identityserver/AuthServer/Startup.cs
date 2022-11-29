@@ -1,5 +1,5 @@
 ﻿using AuthServer.Extensions;
-using AuthServer.Infrastructure.Data.Identity;
+using AuthServerInfrastructure.Data.Identity;
 using AuthServer.Infrastructure.Services;
 using IdentityServer4.Services;
 using Microsoft.AspNetCore.Builder;

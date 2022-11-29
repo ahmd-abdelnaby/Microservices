@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace AuthServer.Infrastructure.Data.Identity
+namespace AuthServerInfrastructure.Data.Identity
 {
     public class AppIdentityDbContext : IdentityDbContext<AppUser>
     {
