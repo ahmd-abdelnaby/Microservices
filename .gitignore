@@ -31,3 +31,5 @@ packages
 /.vs/ProjectSettings.json
 /.vs/Microservices/v17/.futdcache.v1
 /.vs/Microservices/FileContentIndex
+/Services/Product/ProductApi/logs
+/Services/Order/OrderApi/logs
