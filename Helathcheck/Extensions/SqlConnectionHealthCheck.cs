@@ -1,14 +1,11 @@
-﻿using System;
-using System.Data.Common;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using System.Data.Common;
 
 namespace HealthCheckAPISample.Extensions
 {
     // Sample SQL Connection Health Check
-    public class SqlConnectionHealthCheck:IHealthCheck
+    public class SqlConnectionHealthCheck : IHealthCheck
     {
         private static readonly string DefaultTestQuery = "Select 1";
         public string ConnectionString { get; }

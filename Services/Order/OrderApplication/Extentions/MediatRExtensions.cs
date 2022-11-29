@@ -1,8 +1,6 @@
-﻿using HealthChecks.UI.Client;
-using Logging;
+﻿using Logging;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 

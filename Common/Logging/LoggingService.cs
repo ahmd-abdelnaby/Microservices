@@ -10,7 +10,7 @@ namespace Logging
 
         public LoggingService(ILogger logger)
         {
-           this.logger = logger;
+            this.logger = logger;
         }
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)

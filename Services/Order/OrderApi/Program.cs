@@ -1,6 +1,4 @@
-using HealthChecks.UI.Client;
 using Logging;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

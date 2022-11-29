@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using AuthServerInfrastructure.Constants;
+﻿using AuthServerInfrastructure.Constants;
 using AuthServerInfrastructure.Data.Identity;
 using IdentityModel;
 using IdentityServer4;
@@ -9,6 +6,9 @@ using IdentityServer4.Extensions;
 using IdentityServer4.Models;
 using IdentityServer4.Services;
 using Microsoft.AspNetCore.Identity;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace AuthServer.Infrastructure.Services
 {

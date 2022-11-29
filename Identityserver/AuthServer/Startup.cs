@@ -1,6 +1,6 @@
 ﻿using AuthServer.Extensions;
-using AuthServerInfrastructure.Data.Identity;
 using AuthServer.Infrastructure.Services;
+using AuthServerInfrastructure.Data.Identity;
 using IdentityServer4.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -15,7 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using System.Net;
- 
+
 
 
 namespace AuthServer
@@ -54,15 +54,15 @@ namespace AuthServer
                 .AddInMemoryClients(Config.GetClients())
                 .AddAspNetIdentity<AppUser>();
 
-                /* We'll play with this down the road... 
-                    services.AddAuthentication()
-                    .AddGoogle("Google", options =>
-                    {
-                        options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+            /* We'll play with this down the road... 
+                services.AddAuthentication()
+                .AddGoogle("Google", options =>
+                {
+                    options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
 
-                        options.ClientId = "<insert here>";
-                        options.ClientSecret = "<insert here>";
-                    });*/
+                    options.ClientId = "<insert here>";
+                    options.ClientSecret = "<insert here>";
+                });*/
 
             services.AddTransient<IProfileService, IdentityClaimsProfileService>();
 

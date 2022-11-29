@@ -31,7 +31,7 @@ app.UseHealthChecks("/hc", new HealthCheckOptions()
 {
     Predicate = _ => true,
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-}).UseHealthChecksUI( options=>
+}).UseHealthChecksUI(options =>
 {
     options.UIPath = "/hc-ui";
     options.AddCustomStylesheet("./Customization/custom.css");
@@ -42,7 +42,7 @@ app.UseHealthChecks("/hc", new HealthCheckOptions()
 {
     Predicate = _ => true,
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-}); 
+});
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

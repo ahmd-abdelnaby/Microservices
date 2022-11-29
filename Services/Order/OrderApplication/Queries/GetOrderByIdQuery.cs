@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using OrderApplication;
 
 namespace OrderApplication.Queries
 {

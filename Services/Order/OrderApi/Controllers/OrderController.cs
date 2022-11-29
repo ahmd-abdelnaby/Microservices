@@ -42,7 +42,8 @@ namespace OrderApi.Controllers
             {
                 await _mediator.Send(new AddOrderCommand(order));
                 return true;
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return false;
             }

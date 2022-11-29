@@ -15,7 +15,7 @@ namespace ProductAppliction.Handlers
         public async Task<ProductModel> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
         {
             _logger.Information("get product {id}", request.Id);
-            return new ProductModel() {  Name = "product" , id= request.Id, Date=DateTime.Now};
+            return new ProductModel() { Name = "product", id = request.Id, Date = DateTime.Now };
         }
     }
 }

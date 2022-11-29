@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using OrderApplication;
 using OrderApplication.Commands;
 using Serilog;
 
@@ -16,7 +15,7 @@ namespace OrderApplication.Handlers
         public async Task<OrderModel> Handle(AddOrderCommand request, CancellationToken cancellationToken)
         {
             _logger.Information("insert order");
-            return   request.orderModel ;
-        }    
+            return request.orderModel;
+        }
     }
 }

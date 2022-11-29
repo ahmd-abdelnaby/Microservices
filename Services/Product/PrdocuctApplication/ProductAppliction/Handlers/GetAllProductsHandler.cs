@@ -18,7 +18,7 @@ namespace ProductAppliction.Handlers
             return Enumerable.Range(1, 5).Select(index => new ProductModel
             {
                 Date = DateTime.Now.AddDays(index),
-                Name="product",
+                Name = "product",
                 id = 1
 
             }).ToList();

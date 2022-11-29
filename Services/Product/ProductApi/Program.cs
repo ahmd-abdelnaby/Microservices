@@ -1,11 +1,8 @@
-using HealthChecks.UI.Client;
 using Logging;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog(LoggingConfigurtion.ConfigureLogger);
-builder.Services.AddMediatR();
 builder.Services.AddInfrastructure();
 builder.Services.AddSwaggerGen();
 var app = builder.Build();

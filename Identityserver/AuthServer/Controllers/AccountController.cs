@@ -1,18 +1,18 @@
-﻿using AuthServerInfrastructure.Data.Identity;
-using Microsoft.AspNetCore.Mvc;
+﻿using AuthServer.Extensions;
 using AuthServer.Models;
 using AuthServerInfrastructure.Constants;
-using System.Threading.Tasks;
-using IdentityServer4.Services;
-using System.Linq;
-using System;
-using IdentityServer4.Stores;
-using IdentityServer4.Models;
+using AuthServerInfrastructure.Data.Identity;
 using IdentityServer4.Events;
-using AuthServer.Extensions;
-using Microsoft.AspNetCore.Http;
+using IdentityServer4.Models;
+using IdentityServer4.Services;
+using IdentityServer4.Stores;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AuthServer.Controllers
 {
@@ -154,7 +154,7 @@ namespace AuthServer.Controllers
 
         [HttpPost]
         [Route("api/[controller]")]
-        public async Task<IActionResult> Register([FromBody]RegisterRequestViewModel model)
+        public async Task<IActionResult> Register([FromBody] RegisterRequestViewModel model)
         {
             //var aVal = 0; var blowUp = 1 / aVal;
 
@@ -168,7 +168,7 @@ namespace AuthServer.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (!result.Succeeded) return BadRequest(result.Errors);
-            
+
             await _userManager.AddClaimAsync(user, new System.Security.Claims.Claim("userName", user.UserName));
             await _userManager.AddClaimAsync(user, new System.Security.Claims.Claim("name", user.Name));
             await _userManager.AddClaimAsync(user, new System.Security.Claims.Claim("email", user.Email));

@@ -46,7 +46,7 @@ namespace ProductApi.Controllers
                 _logger.LogInformation("save product:" + product.Name);
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }
