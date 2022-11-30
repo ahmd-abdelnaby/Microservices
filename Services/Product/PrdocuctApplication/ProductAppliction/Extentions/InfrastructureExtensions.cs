@@ -5,23 +5,23 @@ using OrderApplication.Extentions;
 
 public static class InfrastructureExtensions
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+    public static WebApplicationBuilder AddInfrastructure(this WebApplicationBuilder webApplicationBuilder)
     {
-        services.AddTransient<LoggingService>();
-        services.AddMediatR();
-        services.AddHealthCheck();
-        services.AddAuthoriz();
+        webApplicationBuilder.Services.AddTransient<LoggingService>();
+        webApplicationBuilder.AddMediatR();
+        webApplicationBuilder.AddHealthCheck();
+        webApplicationBuilder.AddAuthoriz();
 
-        services.AddCors(options =>
+        webApplicationBuilder.Services.AddCors(options =>
         {
             options.AddPolicy("CorsPolicy",
                 builder => builder.AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader());
         });
-        services.AddControllers();
-        services.AddEndpointsApiExplorer();
-        return services;
+        webApplicationBuilder.Services.AddControllers();
+        webApplicationBuilder.Services.AddEndpointsApiExplorer();
+        return webApplicationBuilder;
     }
     public static WebApplication UseInfrastructure(this WebApplication app)
     {

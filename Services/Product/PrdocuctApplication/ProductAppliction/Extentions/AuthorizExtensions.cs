@@ -7,9 +7,9 @@ namespace OrderApplication.Extentions
 {
     internal static class AuthorizExtensions
     {
-        public static IServiceCollection AddAuthoriz(this IServiceCollection services)
+        public static WebApplicationBuilder AddAuthoriz(this WebApplicationBuilder webApplicationBuilder)
         {
-            services.AddAuthentication(options =>
+            webApplicationBuilder.Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -20,12 +20,12 @@ namespace OrderApplication.Extentions
                 o.RequireHttpsMetadata = false;
             });
 
-            services.AddAuthorization(options =>
+            webApplicationBuilder.Services.AddAuthorization(options =>
             {
                 options.AddPolicy("ApiReader", policy => policy.RequireClaim("scope", "api.read"));
                 options.AddPolicy("Consumer", policy => policy.RequireClaim(ClaimTypes.Role, "consumer"));
             });
-            return services;
+            return webApplicationBuilder;
         }
         public static WebApplication UseAuthoriz(this WebApplication app)
         {

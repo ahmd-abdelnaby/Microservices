@@ -6,11 +6,11 @@ using System.Reflection;
 
 public static class MediatRExtensions
 {
-    public static IServiceCollection AddMediatR(this IServiceCollection services)
+    public static WebApplicationBuilder AddMediatR(this WebApplicationBuilder webApplicationBuilder)
     {
-        services.AddMediatR(Assembly.GetExecutingAssembly());
-        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
-        return services;
+        webApplicationBuilder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+        webApplicationBuilder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+        return webApplicationBuilder;
     }
     public static WebApplication UseMediatR(this WebApplication app)
     {

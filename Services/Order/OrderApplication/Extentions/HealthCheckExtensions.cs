@@ -7,15 +7,15 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 public static class HealthCheckExtensions
 {
-    public static IServiceCollection AddHealthCheck(this IServiceCollection services)
+    public static WebApplicationBuilder AddHealthCheck(this WebApplicationBuilder webApplicationBuilder)
     {
-        services.AddHealthChecks()
+        webApplicationBuilder.Services.AddHealthChecks()
                  .AddDiskStorageHealthCheck(delegate (DiskStorageOptions diskStorageOptions)
                  {
                      diskStorageOptions.AddDrive(@"C:\", 500000000000000000);
                  }, name: "My Drive", HealthStatus.Unhealthy);
 
-        return services;
+        return webApplicationBuilder;
     }
     public static WebApplication UseHealthCheck(this WebApplication app)
     {
