@@ -4,7 +4,7 @@ using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog(LoggingConfigurtion.ConfigureLogger);
 builder.AddInfrastructure(); 
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(); 
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())  
