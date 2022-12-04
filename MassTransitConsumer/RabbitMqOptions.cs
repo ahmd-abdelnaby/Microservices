@@ -1,0 +1,22 @@
+﻿using MassTransit.Transports.Fabric;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MassTransitConsumer
+{
+    public class RabbitMqOptions
+    {
+        public string HostName { get; set; }
+        public string ExchangeName { get; set; }
+        public string ExchangeType { get; set; }
+        public string RouteKey { get; set; }
+        public string QueueName { get; set; }
+        public bool IsLasyQueue { get; set; }
+        public bool AutoDelete { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+    }
+}

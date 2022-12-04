@@ -19,6 +19,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Logging\Logging.csproj" />
+    <ProjectReference Include="..\..\..\MassTransitConsumer\MassTransitConsumer.csproj" />
+    <ProjectReference Include="..\..\..\MassTransitProducer\MassTransitProducer.csproj" />
   </ItemGroup>
 
 </Project>
