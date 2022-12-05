@@ -24,7 +24,7 @@ public static class InfrastructureExtensions
     }
     public static WebApplication UseInfrastructure(this WebApplication app)
     {
-
+        app.UseMiddleware(typeof(ErrorHandlingMiddleware));
         app.UseCors("CorsPolicy");
         app.UseHttpsRedirection();
         app.MapControllers();

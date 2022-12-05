@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Common\ErrorHandling\ErrorHandling.csproj" />
     <ProjectReference Include="..\..\..\..\Common\Logging\Logging.csproj" />
   </ItemGroup>
 
