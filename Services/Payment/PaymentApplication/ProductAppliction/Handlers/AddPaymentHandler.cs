@@ -22,7 +22,7 @@ namespace PaymentAppliction.Handlers
 
             await _publisher.Publish(new PaymentAddedEvent
             {
-                Id = request.PaymentModel.id,
+                Id = request.PaymentModel.Id,
                 Amount = request.PaymentModel.Amount,
                 Date = request.PaymentModel.Date,
                 OrderId = request.PaymentModel.OrderId,

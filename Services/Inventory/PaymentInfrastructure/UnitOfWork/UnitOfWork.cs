@@ -1,14 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PaymentDomain.Entities;
-using PaymentDomain.Interfaces;
-using PaymentInfrastructure.Repositories;
+using InventoryDomain.Entities;
+using InventoryDomain.Interfaces;
+using InventoryInfrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PaymentInfrastructure.UnitOfWork
+namespace InventoryInfrastructure.UnitOfWork
 {
     public class UnitOfWork<TContext> : IUnitOfWork<TContext>
     {

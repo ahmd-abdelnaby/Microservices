@@ -25,7 +25,7 @@ namespace PaymentAppliction.Handlers
             foreach (var item in data)
                 list.Add(new PaymentModel
                 {
-                    id = item.id,
+                    Id = item.Id,
                     Amount = item.Amount,
                     Date = item.Date,
                     OrderId=item.OrderId,

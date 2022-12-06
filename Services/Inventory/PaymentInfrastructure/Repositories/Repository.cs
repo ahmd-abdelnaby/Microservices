@@ -1,13 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PaymentDomain.Entities;
-using PaymentDomain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using InventoryDomain.Entities;
+using InventoryDomain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
-namespace PaymentInfrastructure.Repositories
+namespace InventoryInfrastructure.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
     {
