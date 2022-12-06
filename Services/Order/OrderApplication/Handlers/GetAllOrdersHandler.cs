@@ -4,7 +4,7 @@ using Serilog;
 
 namespace OrderApplication.Handlers
 {
-    internal class GetAllOrdersHandler : IRequestHandler<GetAllOrdersQuery, List<OrderModel>>
+    internal class GetAllOrdersHandler : IRequestHandler<GetAllOrdersQuery, List<Order>>
     {
         private readonly ILogger _logger;
         public GetAllOrdersHandler(ILogger logger)
@@ -12,13 +12,13 @@ namespace OrderApplication.Handlers
             _logger = logger;
 
         }
-        public async Task<List<OrderModel>> Handle(GetAllOrdersQuery request, CancellationToken cancellationToken)
+        public async Task<List<Order>> Handle(GetAllOrdersQuery request, CancellationToken cancellationToken)
         {
             _logger.Information("get all orders");
-            return Enumerable.Range(1, 5).Select(index => new OrderModel
+            return Enumerable.Range(1, 5).Select(index => new Order
             {
-                Date = DateTime.Now.AddDays(index),
-                cost = 100,
+                OrderDate = DateTime.Now.AddDays(index),
+                TotalPrice = 100,
                 id = 1
 
             }).ToList();

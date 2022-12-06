@@ -2,5 +2,5 @@
 
 namespace OrderApplication.Commands
 {
-    public record AddOrderCommand(OrderModel orderModel) : IRequest<OrderModel>;
+    public record AddOrderCommand(Order orderModel) : IRequest<Order>;
 }

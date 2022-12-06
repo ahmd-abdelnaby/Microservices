@@ -2,5 +2,5 @@
 
 namespace OrderApplication.Queries
 {
-    public record GetOrderByIdQuery(int Id) : IRequest<OrderModel>;
+    public record GetOrderByIdQuery(int Id) : IRequest<Order>;
 }

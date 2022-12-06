@@ -2,10 +2,14 @@
 using MassTransitConsumer;
 using MassTransitProducer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Hosting.Internal;
+using Microsoft.Extensions.Options;
 using OrderApplication;
+using OrderApplication.Context;
 using OrderApplication.Extentions;
 using ProductOrderMessage;
 
@@ -24,6 +28,9 @@ public static class InfrastructureExtensions
                     .AllowAnyMethod()
                     .AllowAnyHeader());
         });
+        /*webApplicationBuilder.Services.AddDbContext<OrderDBContext>(options =>
+        options.UseSqlServer(webApplicationBuilder.Configuration.GetConnectionString("connectionString")));*/
+
         webApplicationBuilder.Services.AddControllers();
         webApplicationBuilder.Services.AddEndpointsApiExplorer();
         webApplicationBuilder.AddAuthoriz();
