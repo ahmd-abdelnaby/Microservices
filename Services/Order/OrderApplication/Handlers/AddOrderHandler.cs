@@ -1,8 +1,8 @@
 ﻿using MassTransit;
 using MassTransitConsumer;
-using MassTransitConsumer.Messages.Order;
 using MediatR;
 using OrderApplication.Commands;
+using ProductOrderMessage;
 using Serilog;
 
 namespace OrderApplication.Handlers
@@ -20,7 +20,7 @@ namespace OrderApplication.Handlers
         }
         public async Task<OrderModel> Handle(AddOrderCommand request, CancellationToken cancellationToken)
         {
-            await this._PublishEndpoint.Publish<OrderMessage>(new OrderMessage {cost= request.orderModel.cost });
+            await this._PublishEndpoint.Publish<ProductOrderMessageModel>(new ProductOrderMessageModel { Cost= request.orderModel.cost.Value });
 
             _logger.Information("insert order And it is Published To Consumers");
             return request.orderModel;
