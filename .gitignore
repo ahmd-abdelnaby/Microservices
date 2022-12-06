@@ -35,3 +35,4 @@ packages
 /Services/Order/OrderApi/logs
 /.vs
 /Identityserver/AuthServerInfrastructure/Properties
+/Services/Order/OrderApi/Properties/PublishProfiles
