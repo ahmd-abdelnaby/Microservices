@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PaymentAppliction.Consumers
+namespace InventoryAppliction.Consumers
 {
-    public class PaymentConsumer<TMessage> : IConsumer<TMessage> where TMessage : class
+    public class InventoryConsumer<TMessage> : IConsumer<TMessage> where TMessage : class
     {
         public async Task Consume(ConsumeContext<TMessage> context)
         {

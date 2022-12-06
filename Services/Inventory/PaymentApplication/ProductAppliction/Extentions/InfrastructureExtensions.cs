@@ -4,19 +4,19 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PaymentApplication.Extentions;
-using PaymentAppliction.Consumers;
-using PaymentDomain.Interfaces;
-using PaymentInfrastructure;
-using PaymentInfrastructure.UnitOfWork;
+using InventoryApplication.Extentions;
+using InventoryAppliction.Consumers;
+using InventoryDomain.Interfaces;
+using InventoryInfrastructure;
+using InventoryInfrastructure.UnitOfWork;
 
 public static class InfrastructureExtensions
 {
     public static WebApplicationBuilder AddInfrastructure(this WebApplicationBuilder webApplicationBuilder)
     {
-        webApplicationBuilder.Services.AddDbContext<PaymentContext>(options =>
-        options.UseSqlServer(webApplicationBuilder.Configuration.GetConnectionString("PaymentConnection")));
-        webApplicationBuilder.Services.AddScoped<IPaymentContext, PaymentContext>();
+        webApplicationBuilder.Services.AddDbContext<InventoryContext>(options =>
+        options.UseSqlServer(webApplicationBuilder.Configuration.GetConnectionString("InventoryConnection")));
+        webApplicationBuilder.Services.AddScoped<IInventoryContext, InventoryContext>();
 
         webApplicationBuilder.Services.AddTransient<LoggingService>();
         webApplicationBuilder.Services.AddTransient(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));

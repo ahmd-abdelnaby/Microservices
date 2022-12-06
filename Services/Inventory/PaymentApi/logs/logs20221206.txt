@@ -1,0 +1,8 @@
+﻿22:43:00 [INFO] Now listening on: https://localhost:7120
+22:43:00 [INFO] Now listening on: http://localhost:5120
+22:43:00 [INFO] Application started. Press Ctrl+C to shut down.
+22:43:00 [INFO] Hosting environment: Development
+22:43:00 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+22:43:10 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+22:43:10 [INFO] get all Inventorys
+22:43:12 [INFO] [LoggingBehavior] Handled {X-RequestData}
