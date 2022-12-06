@@ -1,12 +1,11 @@
 ﻿using Logging;
 using MassTransitConsumer;
-using MassTransitConsumer.Consumers.Order;
-using MassTransitConsumer.Messages.Order;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using OrderApplication.Extentions;
 using ProductAppliction.Consumers;
 using ProductAppliction.Models;
+using ProductOrderMessage;
 
 public static class InfrastructureExtensions
 {
@@ -16,7 +15,7 @@ public static class InfrastructureExtensions
         webApplicationBuilder.AddMediatR();
         webApplicationBuilder.AddHealthCheck();
 
-        webApplicationBuilder.Services.AddCustomMassTransitConsumer<OrderConsumer<OrderMessage>, OrderMessage>("Development");//,webApplicationBuilder.Environment
+        webApplicationBuilder.Services.AddCustomMassTransitConsumer<OrderConsumer<ProductOrderMessageModel>, ProductOrderMessageModel>("Development");//,webApplicationBuilder.Environment
 
 
         webApplicationBuilder.AddAuthoriz();

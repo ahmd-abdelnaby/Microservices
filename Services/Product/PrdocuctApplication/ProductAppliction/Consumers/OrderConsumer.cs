@@ -9,10 +9,9 @@ using System.Threading.Tasks;
 
 namespace ProductAppliction.Consumers
 {
-    public class EmailConsumer:/*IConsumer<ProductOrderModel> */ GenericConsumer<ProductOrderModel>
+    public class OrderConsumer<TMessage> : IConsumer<TMessage> where TMessage : class
     {
-
-        public override async Task Consume(ConsumeContext<ProductOrderModel> context)
+        public async Task Consume(ConsumeContext<TMessage> context)
         {
             await Console.Out.WriteLineAsync("new order added with Cost : " + context.Message.ToString());
         }
