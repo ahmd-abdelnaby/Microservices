@@ -1,0 +1,39 @@
+﻿19:13:31 [WARN] No store type was specified for the decimal property 'Amount' on entity type 'Payment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+19:13:32 [WARN] No store type was specified for the decimal property 'Amount' on entity type 'Payment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+19:15:15 [WARN] No store type was specified for the decimal property 'Amount' on entity type 'Payment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+19:15:16 [WARN] No store type was specified for the decimal property 'Amount' on entity type 'Payment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+19:15:27 [WARN] No store type was specified for the decimal property 'Amount' on entity type 'Payment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+19:15:28 [WARN] No store type was specified for the decimal property 'Amount' on entity type 'Payment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+19:16:21 [INFO] Now listening on: https://localhost:7120
+19:16:22 [INFO] Now listening on: http://localhost:5120
+19:16:22 [INFO] Application started. Press Ctrl+C to shut down.
+19:16:22 [INFO] Hosting environment: Development
+19:16:22 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Payment\PaymentApi\
+19:16:33 [EROR] localhost:7120 has error
+System.Exception: some error throw
+   at PaymentApi.Controllers.PaymentController.GetAsync() in C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Payment\PaymentApi\Controllers\PaymentController.cs:line 27
+   at lambda_method6(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Logging.ErrorHandlingMiddleware.Invoke(HttpContext context) in C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Common\ErrorHandling\ErrorHandlingMiddleware.cs:line 22
+19:17:09 [INFO] Now listening on: https://localhost:7120
+19:17:10 [INFO] Now listening on: http://localhost:5120
+19:17:10 [INFO] Application started. Press Ctrl+C to shut down.
+19:17:10 [INFO] Hosting environment: Development
+19:17:10 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Payment\PaymentApi\
+19:17:14 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+19:17:16 [INFO] get all Payments
+19:17:18 [WARN] No store type was specified for the decimal property 'Amount' on entity type 'Payment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+19:17:21 [WARN] [{Perf-Possible}] The request {X-RequestData} took 6 seconds.
+19:17:21 [INFO] [LoggingBehavior] Handled {X-RequestData}
