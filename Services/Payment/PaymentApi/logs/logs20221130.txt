@@ -1,0 +1,43 @@
+﻿10:05:36 [INFO] Now listening on: https://localhost:7120
+10:05:36 [INFO] Now listening on: http://localhost:5120
+10:05:36 [INFO] Application started. Press Ctrl+C to shut down.
+10:05:36 [INFO] Hosting environment: Development
+10:05:36 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Payment\PaymentApi\
+10:09:09 [INFO] Now listening on: https://localhost:7120
+10:09:10 [INFO] Now listening on: http://localhost:5120
+10:09:10 [INFO] Application started. Press Ctrl+C to shut down.
+10:09:10 [INFO] Hosting environment: Development
+10:09:10 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Payment\PaymentApi\
+10:09:46 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+10:09:46 [INFO] get Payment 1
+10:09:46 [INFO] [LoggingBehavior] Handled {X-RequestData}
+13:14:41 [INFO] Now listening on: https://localhost:7120
+13:14:41 [INFO] Now listening on: http://localhost:5120
+13:14:41 [INFO] Application started. Press Ctrl+C to shut down.
+13:14:41 [INFO] Hosting environment: Development
+13:14:41 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Payment\PaymentApi\
+14:02:38 [INFO] Now listening on: https://localhost:7120
+14:02:38 [INFO] Now listening on: http://localhost:5120
+14:02:38 [INFO] Application started. Press Ctrl+C to shut down.
+14:02:38 [INFO] Hosting environment: Development
+14:02:38 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Payment\PaymentApi\
+14:58:26 [INFO] Now listening on: https://localhost:7120
+14:58:27 [INFO] Now listening on: http://localhost:5120
+14:58:27 [INFO] Application started. Press Ctrl+C to shut down.
+14:58:27 [INFO] Hosting environment: Development
+14:58:27 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Payment\PaymentApi\
+14:59:35 [INFO] Now listening on: https://localhost:7120
+14:59:36 [INFO] Now listening on: http://localhost:5120
+14:59:36 [INFO] Application started. Press Ctrl+C to shut down.
+14:59:36 [INFO] Hosting environment: Development
+14:59:36 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Payment\PaymentApi\
+15:29:48 [INFO] Now listening on: https://localhost:7120
+15:29:48 [INFO] Now listening on: http://localhost:5120
+15:29:48 [INFO] Application started. Press Ctrl+C to shut down.
+15:29:48 [INFO] Hosting environment: Development
+15:29:48 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Payment\PaymentApi\
+15:31:00 [INFO] Now listening on: https://localhost:7120
+15:31:01 [INFO] Now listening on: http://localhost:5120
+15:31:01 [INFO] Application started. Press Ctrl+C to shut down.
+15:31:01 [INFO] Hosting environment: Development
+15:31:01 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Payment\PaymentApi\
