@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using OrderApplication;
 using OrderApplication.Commands;
 using OrderApplication.Queries;
+using OrderApplication.ViewModels;
 
 namespace OrderApi.Controllers
 {
@@ -24,19 +25,19 @@ namespace OrderApi.Controllers
         [Authorize(Policy = "Consumer")]
         [Authorize(Roles = "consumer")]
         [HttpGet]
-        public async Task<IEnumerable<OrderModel>> GetAsync()
+        public async Task<IEnumerable<Order>> GetAsync()
         {
             return await _mediator.Send(new GetAllOrdersQuery());
         }
         [HttpGet]
         [Route("{id}")]
-        public async Task<OrderModel> GetById(int id)
+        public async Task<Order> GetById(int id)
         {
             return await _mediator.Send(new GetOrderByIdQuery(id));
 
         }
         [HttpPost]
-        public async Task<bool> PostAsync(OrderModel order)
+        public async Task<bool> PostAsync(OrderVM order)
         {
             try
             {
