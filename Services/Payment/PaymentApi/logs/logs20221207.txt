@@ -1,0 +1,24 @@
+﻿12:31:33 [INFO] Now listening on: https://localhost:7120
+12:31:33 [INFO] Now listening on: http://localhost:5120
+12:31:33 [INFO] Application started. Press Ctrl+C to shut down.
+12:31:33 [INFO] Hosting environment: Development
+12:31:33 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Payment\PaymentApi\
+12:31:48 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+12:31:49 [INFO] insert Payment
+12:31:50 [WARN] No store type was specified for the decimal property 'Amount' on entity type 'Payment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+12:31:50 [INFO] PaymentAddedEvent
+12:31:50 [INFO] [LoggingBehavior] Handled {X-RequestData}
+12:31:50 [INFO] save Payment:0
+12:34:28 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+12:34:35 [INFO] insert Payment
+12:35:06 [INFO] Now listening on: https://localhost:7120
+12:35:06 [INFO] Now listening on: http://localhost:5120
+12:35:06 [INFO] Application started. Press Ctrl+C to shut down.
+12:35:06 [INFO] Hosting environment: Development
+12:35:06 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Payment\PaymentApi\
+12:35:15 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+12:35:16 [INFO] insert Payment
+12:35:17 [WARN] No store type was specified for the decimal property 'Amount' on entity type 'Payment'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+12:35:19 [INFO] PaymentAddedEvent
+12:35:19 [INFO] [LoggingBehavior] Handled {X-RequestData}
+12:35:19 [INFO] save Payment:0

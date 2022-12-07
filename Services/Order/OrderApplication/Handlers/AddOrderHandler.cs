@@ -1,8 +1,10 @@
-﻿using MassTransit;
+﻿using ApiHelper;
+using MassTransit;
 using MassTransitConsumer;
 using MediatR;
 using OrderApplication.Commands;
 using OrderApplication.Context;
+using OrderApplication.DTO;
 using OrderApplication.Models;
 using OrderApplication.ViewModels;
 using Serilog;
@@ -10,7 +12,7 @@ using SharedMessages;
 
 namespace OrderApplication.Handlers
 {
-    public class AddOrderHandler : IRequestHandler<AddOrderCommand, OrderVM>
+    public class AddOrderHandler : IRequestHandler<AddOrderCommand, bool>
     {
         private readonly ILogger _logger;
         private readonly IPublishEndpoint _PublishEndpoint;
@@ -22,50 +24,65 @@ namespace OrderApplication.Handlers
             _Context = Context;
 
         }
-        public async Task<OrderVM> Handle(AddOrderCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(AddOrderCommand request, CancellationToken cancellationToken)
         {
             try
             {
-                Order order = new Order()
-                {
-                    OrderDate = request.order.OrderDate,
-                    PaymentDate = request.order.PaymentDate,    
-                    Status= request.order.Status,   
-                    TotalPrice = request.order.TotalPrice,
-                };
-                order.Details=new List<OrderDetails>();
-                var Qts = new List<ProductQuantities>();
-
-                foreach (var det in request.order.Details)
-                {
-                    order.Details.Add(new OrderDetails()
+                var orderProducts = new List<ProductModel>();
+                foreach (var item in request.order.Details)
+                    orderProducts.Add(new ProductModel
                     {
-                        ProductId = det.ProductId,
-                        Quantity = det.Quantity,
-                        TotalPrice = det.TotalPrice
+                        Id = item.ProductId,
+                        Qauntity = item.Quantity
                     });
-                    Qts.Add(new ProductQuantities()
-                    {
-                         ProductId= det.ProductId,
-                         Quantity =det.Quantity
-                    });
-                }
-
-                await _Context.Orders.AddAsync(order);
-                var result = _Context.SaveChanges();
-                if (result == 4)
+                //call Inventory api
+                var api = new ApiClient<List<ProductModel>, List<ProductAvaliblity>>("Inventory/CehckAvalibleProductQuntity", "https://localhost:7120/api/");
+                var data = await api.Post(orderProducts);
+                if (!(data.Where(x => !x.Avalible).Any()))
                 {
 
-                    await this._PublishEndpoint.Publish<InventoryQuantities>(new InventoryQuantities() { Qts= Qts });
+                    Order order = new Order()
+                    {
+                        OrderDate = request.order.OrderDate,
+                        PaymentDate = request.order.PaymentDate,
+                        Status = request.order.Status,
+                        TotalPrice = request.order.TotalPrice,
+                    };
+                    order.Details = new List<OrderDetails>();
+                    var Qts = new List<ProductQuantities>();
+                    foreach (var det in request.order.Details)
+                    {
+                        order.Details.Add(new OrderDetails()
+                        {
+                            ProductId = det.ProductId,
+                            Quantity = det.Quantity,
+                            TotalPrice = det.TotalPrice
+                        });
+                        Qts.Add(new ProductQuantities()
+                        {
+                            ProductId = det.ProductId,
+                            Quantity = det.Quantity
+                        });
+                    }
+                    await _Context.Orders.AddAsync(order);
+                    var result = _Context.SaveChanges();
+                    if (result == 4)
+                    {
 
-                    _logger.Information("insert order And it is Published To Consumers");
-                    return request.order;
+                        await this._PublishEndpoint.Publish<InventoryQuantities>(new InventoryQuantities() { Qts = Qts });
+
+                        _logger.Information("insert order And it is Published To Consumers");
+                        return true;
+                    }
+                    else
+                        return false;
                 }
-                return null;
+                else
+                    return false;
             }
             catch (Exception ex)
             {
-                return null;
+                return false;
             }
         }
     }

@@ -13,7 +13,7 @@ namespace OrderApplication
         public OrderStatus Status { get; set; }
         public DateTime PaymentDate { get; set; }
 
-        public virtual ICollection<OrderDetails> Details { get; set; }
+        public virtual ICollection<OrderDetails>? Details { get; set; }
 
 
     }

@@ -1,227 +1,313 @@
-﻿13:14:43 [INFO] Now listening on: https://localhost:7120
-13:14:44 [INFO] Bus started: "rabbitmq://localhost/"
-13:14:44 [INFO] Now listening on: http://localhost:5120
-13:14:44 [INFO] Application started. Press Ctrl+C to shut down.
-13:14:44 [INFO] Hosting environment: Development
-13:14:44 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-13:21:41 [INFO] Now listening on: https://localhost:7120
-13:21:41 [INFO] Bus started: "rabbitmq://localhost/"
-13:21:41 [INFO] Now listening on: http://localhost:5120
-13:21:41 [INFO] Application started. Press Ctrl+C to shut down.
-13:21:41 [INFO] Hosting environment: Development
-13:21:41 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-13:30:28 [INFO] Now listening on: https://localhost:7120
-13:30:29 [INFO] Bus started: "rabbitmq://localhost/"
-13:30:29 [INFO] Now listening on: http://localhost:5120
-13:30:29 [INFO] Application started. Press Ctrl+C to shut down.
-13:30:29 [INFO] Hosting environment: Development
-13:30:29 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-13:45:35 [INFO] Now listening on: https://localhost:7120
-13:45:35 [INFO] Bus started: "rabbitmq://localhost/"
-13:45:35 [INFO] Now listening on: http://localhost:5120
-13:45:35 [INFO] Application started. Press Ctrl+C to shut down.
-13:45:35 [INFO] Hosting environment: Development
-13:45:35 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-13:58:48 [INFO] Now listening on: https://localhost:7120
-13:58:48 [INFO] Bus started: "rabbitmq://localhost/"
-13:58:48 [INFO] Now listening on: http://localhost:5120
-13:58:48 [INFO] Application started. Press Ctrl+C to shut down.
-13:58:49 [INFO] Hosting environment: Development
-13:58:49 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-14:23:55 [INFO] Now listening on: https://localhost:7120
-14:23:56 [INFO] Bus started: "rabbitmq://localhost/"
-14:23:56 [INFO] Now listening on: http://localhost:5120
-14:23:56 [INFO] Application started. Press Ctrl+C to shut down.
-14:23:56 [INFO] Hosting environment: Development
-14:23:56 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-15:04:50 [INFO] Now listening on: https://localhost:7120
-15:04:50 [INFO] Bus started: "rabbitmq://localhost/"
-15:04:50 [INFO] Now listening on: http://localhost:5120
-15:04:50 [INFO] Application started. Press Ctrl+C to shut down.
-15:04:50 [INFO] Hosting environment: Development
-15:04:50 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-15:05:08 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "cc490000-30f1-3c2c-d48f-08dad84e32dc" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:17.0813744")
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 31
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
-   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
-15:06:21 [INFO] Now listening on: https://localhost:7120
-15:06:21 [INFO] Bus started: "rabbitmq://localhost/"
-15:06:21 [INFO] Now listening on: http://localhost:5120
-15:06:21 [INFO] Application started. Press Ctrl+C to shut down.
-15:06:21 [INFO] Hosting environment: Development
-15:06:21 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-15:06:39 [INFO] Now listening on: https://localhost:7120
-15:06:39 [INFO] Bus started: "rabbitmq://localhost/"
-15:06:39 [INFO] Now listening on: http://localhost:5120
-15:06:39 [INFO] Application started. Press Ctrl+C to shut down.
-15:06:39 [INFO] Hosting environment: Development
-15:06:39 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-15:07:31 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "b4610000-30f1-3c2c-2c66-08dad853ffd7" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:00.0057470")
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 33
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
-   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
-15:08:01 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "b4610000-30f1-3c2c-d3cb-08dad85411f8" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:00.0004801")
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 33
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
-   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
-15:08:19 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "b4610000-30f1-3c2c-c446-08dad8541ca6" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:00.0001393")
-System.NullReferenceException: Object reference not set to an instance of an object.
-   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 33
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
-   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
-15:09:54 [INFO] Now listening on: https://localhost:7120
-15:09:54 [INFO] Bus started: "rabbitmq://localhost/"
-15:09:54 [INFO] Now listening on: http://localhost:5120
-15:09:54 [INFO] Application started. Press Ctrl+C to shut down.
-15:09:54 [INFO] Hosting environment: Development
-15:09:54 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-15:15:02 [INFO] Now listening on: https://localhost:7120
-15:15:03 [INFO] Bus started: "rabbitmq://localhost/"
-15:15:03 [INFO] Now listening on: http://localhost:5120
-15:15:03 [INFO] Application started. Press Ctrl+C to shut down.
-15:15:03 [INFO] Hosting environment: Development
-15:15:03 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-15:15:27 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "54360000-30f1-3c2c-025a-08dad8546a22" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:22.6593208")
-System.ArgumentNullException: Value cannot be null. (Parameter 'collection')
-   at System.Collections.Generic.List`1.InsertRange(Int32 index, IEnumerable`1 collection)
-   at System.Collections.Generic.List`1.AddRange(IEnumerable`1 collection)
-   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 33
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
-   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
-15:16:14 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "34ab0000-30f1-3c2c-ae10-08dad8552f96" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:05.8232428")
-System.ArgumentNullException: Value cannot be null. (Parameter 'collection')
-   at System.Collections.Generic.List`1.InsertRange(Int32 index, IEnumerable`1 collection)
-   at System.Collections.Generic.List`1.AddRange(IEnumerable`1 collection)
-   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 33
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
-   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
-15:17:04 [INFO] Now listening on: https://localhost:7120
-15:17:04 [INFO] Bus started: "rabbitmq://localhost/"
-15:17:04 [INFO] Now listening on: http://localhost:5120
-15:17:04 [INFO] Application started. Press Ctrl+C to shut down.
-15:17:04 [INFO] Hosting environment: Development
-15:17:04 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-15:17:33 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "68220000-30f1-3c2c-1c3f-08dad85565f7" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:01.0164240")
-System.ArgumentNullException: Value cannot be null. (Parameter 'collection')
-   at System.Collections.Generic.List`1.InsertRange(Int32 index, IEnumerable`1 collection)
-   at System.Collections.Generic.List`1.AddRange(IEnumerable`1 collection)
-   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 33
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
-   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
-   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
-15:21:19 [INFO] Now listening on: https://localhost:7120
-15:21:19 [INFO] Bus started: "rabbitmq://localhost/"
-15:21:19 [INFO] Now listening on: http://localhost:5120
-15:21:19 [INFO] Application started. Press Ctrl+C to shut down.
-15:21:19 [INFO] Hosting environment: Development
-15:21:19 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-15:23:58 [INFO] Now listening on: https://localhost:7120
-15:23:58 [INFO] Bus started: "rabbitmq://localhost/"
-15:23:58 [INFO] Now listening on: http://localhost:5120
-15:23:58 [INFO] Application started. Press Ctrl+C to shut down.
-15:23:58 [INFO] Hosting environment: Development
-15:23:58 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-15:32:42 [INFO] Now listening on: https://localhost:7120
-15:32:42 [INFO] Bus started: "rabbitmq://localhost/"
-15:32:43 [INFO] Now listening on: http://localhost:5120
-15:32:43 [INFO] Application started. Press Ctrl+C to shut down.
-15:32:43 [INFO] Hosting environment: Development
-15:32:43 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-15:33:27 [INFO] Now listening on: https://localhost:7120
-15:33:28 [INFO] Bus started: "rabbitmq://localhost/"
-15:33:28 [INFO] Now listening on: http://localhost:5120
-15:33:28 [INFO] Application started. Press Ctrl+C to shut down.
-15:33:28 [INFO] Hosting environment: Development
-15:33:28 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-15:41:50 [INFO] Now listening on: https://localhost:7120
-15:41:51 [INFO] Bus started: "rabbitmq://localhost/"
-15:41:51 [INFO] Now listening on: http://localhost:5120
-15:41:51 [INFO] Application started. Press Ctrl+C to shut down.
-15:41:51 [INFO] Hosting environment: Development
-15:41:51 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-15:46:38 [INFO] Now listening on: https://localhost:7120
-15:46:39 [INFO] Bus started: "rabbitmq://localhost/"
-15:46:39 [INFO] Now listening on: http://localhost:5120
-15:46:39 [INFO] Application started. Press Ctrl+C to shut down.
-15:46:39 [INFO] Hosting environment: Development
-15:46:39 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-15:53:09 [INFO] Now listening on: https://localhost:7120
-15:53:10 [INFO] Bus started: "rabbitmq://localhost/"
-15:53:10 [INFO] Now listening on: http://localhost:5120
-15:53:10 [INFO] Application started. Press Ctrl+C to shut down.
-15:53:10 [INFO] Hosting environment: Development
-15:53:10 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-16:01:57 [INFO] Now listening on: https://localhost:7120
-16:01:58 [INFO] Bus started: "rabbitmq://localhost/"
-16:01:58 [INFO] Now listening on: http://localhost:5120
-16:01:58 [INFO] Application started. Press Ctrl+C to shut down.
-16:01:58 [INFO] Hosting environment: Development
-16:01:58 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-16:02:47 [INFO] Now listening on: https://localhost:7120
-16:02:48 [INFO] Bus started: "rabbitmq://localhost/"
-16:02:48 [INFO] Now listening on: http://localhost:5120
-16:02:48 [INFO] Application started. Press Ctrl+C to shut down.
-16:02:48 [INFO] Hosting environment: Development
-16:02:48 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-17:07:49 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
-17:07:50 [INFO] Now listening on: https://localhost:7120
-17:07:50 [INFO] Now listening on: http://localhost:5120
-17:07:50 [INFO] Application started. Press Ctrl+C to shut down.
-17:07:50 [INFO] Hosting environment: Development
-17:07:50 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-17:07:51 [INFO] Bus started: "rabbitmq://localhost/"
-17:11:20 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
-17:11:21 [INFO] Now listening on: https://localhost:7120
-17:11:21 [INFO] Now listening on: http://localhost:5120
-17:11:21 [INFO] Application started. Press Ctrl+C to shut down.
-17:11:21 [INFO] Hosting environment: Development
-17:11:21 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-17:11:21 [INFO] Bus started: "rabbitmq://localhost/"
-17:14:56 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
-17:14:57 [INFO] Now listening on: https://localhost:7120
-17:14:57 [INFO] Now listening on: http://localhost:5120
-17:14:57 [INFO] Application started. Press Ctrl+C to shut down.
-17:14:57 [INFO] Hosting environment: Development
-17:14:57 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-17:14:58 [INFO] Bus started: "rabbitmq://localhost/"
-17:15:48 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
-17:15:48 [INFO] Now listening on: https://localhost:7120
-17:15:48 [INFO] Now listening on: http://localhost:5120
-17:15:48 [INFO] Application started. Press Ctrl+C to shut down.
-17:15:48 [INFO] Hosting environment: Development
-17:15:48 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-17:15:49 [INFO] Bus started: "rabbitmq://localhost/"
-17:19:34 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
-17:19:36 [WARN] Failed to stop bus: "rabbitmq://localhost/ALIKHALAF_InventoryApi_bus_ebnoyybo6r6na9anbdppo3u1du?temporary=true" (Not Started)
-17:20:25 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
-17:20:27 [WARN] Failed to stop bus: "rabbitmq://localhost/ALIKHALAF_InventoryApi_bus_ptqyyybo6r6n39ybbdppo3wtys?temporary=true" (Not Started)
-17:23:49 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
-17:23:51 [INFO] Now listening on: https://localhost:7120
-17:23:51 [INFO] Now listening on: http://localhost:5120
-17:23:51 [INFO] Application started. Press Ctrl+C to shut down.
-17:23:51 [INFO] Hosting environment: Development
-17:23:51 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-17:23:51 [INFO] Bus started: "rabbitmq://localhost/"
-17:25:08 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
-17:25:09 [INFO] Now listening on: https://localhost:7120
-17:25:09 [INFO] Now listening on: http://localhost:5120
-17:25:09 [INFO] Application started. Press Ctrl+C to shut down.
-17:25:09 [INFO] Hosting environment: Development
-17:25:09 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-17:25:10 [INFO] Bus started: "rabbitmq://localhost/"
-17:29:47 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
-17:29:48 [INFO] Now listening on: https://localhost:7120
-17:29:48 [INFO] Now listening on: http://localhost:5120
-17:29:48 [INFO] Application started. Press Ctrl+C to shut down.
-17:29:48 [INFO] Hosting environment: Development
-17:29:48 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
-17:29:48 [INFO] Bus started: "rabbitmq://localhost/"
+﻿12:07:41 [INFO] Now listening on: https://localhost:7120
+12:07:42 [INFO] Now listening on: http://localhost:5120
+12:07:42 [INFO] Application started. Press Ctrl+C to shut down.
+12:07:42 [INFO] Hosting environment: Development
+12:07:42 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+12:07:43 [EROR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/Inventory" for actions - InventoryApi.Controllers.InventoryController.PostAsync (InventoryApi),InventoryApi.Controllers.InventoryController.CehckAvalibleProductQuntity (InventoryApi). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+12:11:51 [INFO] Now listening on: https://localhost:7120
+12:11:52 [INFO] Now listening on: http://localhost:5120
+12:11:52 [INFO] Application started. Press Ctrl+C to shut down.
+12:11:52 [INFO] Hosting environment: Development
+12:11:52 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+12:11:53 [EROR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/Inventory" for actions - InventoryApi.Controllers.InventoryController.PostAsync (InventoryApi),InventoryApi.Controllers.InventoryController.CehckAvalibleProductQuntity (InventoryApi). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+12:12:57 [INFO] Now listening on: https://localhost:7120
+12:12:58 [INFO] Now listening on: http://localhost:5120
+12:12:58 [INFO] Application started. Press Ctrl+C to shut down.
+12:12:58 [INFO] Hosting environment: Development
+12:12:58 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+12:13:36 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+12:14:26 [WARN] [{Perf-Possible}] The request {X-RequestData} took 50 seconds.
+12:14:26 [INFO] [LoggingBehavior] Handled {X-RequestData}
+13:39:46 [INFO] Now listening on: https://localhost:7120
+13:39:46 [INFO] Now listening on: http://localhost:5120
+13:39:46 [INFO] Application started. Press Ctrl+C to shut down.
+13:39:46 [INFO] Hosting environment: Development
+13:39:46 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+13:58:10 [INFO] Now listening on: https://localhost:7120
+13:58:10 [INFO] Now listening on: http://localhost:5120
+13:58:10 [INFO] Application started. Press Ctrl+C to shut down.
+13:58:10 [INFO] Hosting environment: Development
+13:58:10 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:01:20 [INFO] Now listening on: https://localhost:7120
+14:01:21 [INFO] Now listening on: http://localhost:5120
+14:01:21 [INFO] Application started. Press Ctrl+C to shut down.
+14:01:21 [INFO] Hosting environment: Development
+14:01:21 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:01:48 [INFO] Now listening on: https://localhost:7120
+14:01:48 [INFO] Now listening on: http://localhost:5120
+14:01:48 [INFO] Application started. Press Ctrl+C to shut down.
+14:01:48 [INFO] Hosting environment: Development
+14:01:48 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:03:30 [INFO] Now listening on: https://localhost:7120
+14:03:31 [INFO] Now listening on: http://localhost:5120
+14:03:31 [INFO] Application started. Press Ctrl+C to shut down.
+14:03:31 [INFO] Hosting environment: Development
+14:03:31 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:06:30 [INFO] Now listening on: https://localhost:7120
+14:06:31 [INFO] Now listening on: http://localhost:5120
+14:06:31 [INFO] Application started. Press Ctrl+C to shut down.
+14:06:31 [INFO] Hosting environment: Development
+14:06:31 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:08:36 [INFO] Now listening on: https://localhost:7120
+14:08:37 [INFO] Now listening on: http://localhost:5120
+14:08:37 [INFO] Application started. Press Ctrl+C to shut down.
+14:08:37 [INFO] Hosting environment: Development
+14:08:37 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:11:51 [INFO] Now listening on: https://localhost:7120
+14:11:51 [INFO] Now listening on: http://localhost:5120
+14:11:51 [INFO] Application started. Press Ctrl+C to shut down.
+14:11:51 [INFO] Hosting environment: Development
+14:11:51 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:13:55 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+14:14:00 [WARN] [{Perf-Possible}] The request {X-RequestData} took 4 seconds.
+14:14:00 [INFO] [LoggingBehavior] Handled {X-RequestData}
+14:18:18 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+14:18:18 [INFO] get all Inventorys
+14:18:18 [INFO] [LoggingBehavior] Handled {X-RequestData}
+14:18:32 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+14:18:32 [INFO] get all Inventorys
+14:18:32 [INFO] [LoggingBehavior] Handled {X-RequestData}
+14:19:49 [INFO] Now listening on: https://localhost:7120
+14:19:50 [INFO] Now listening on: http://localhost:5120
+14:19:50 [INFO] Application started. Press Ctrl+C to shut down.
+14:19:50 [INFO] Hosting environment: Development
+14:19:50 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:20:00 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+14:20:00 [INFO] get all Inventorys
+14:20:02 [INFO] [LoggingBehavior] Handled {X-RequestData}
+14:21:36 [INFO] Now listening on: https://localhost:7120
+14:21:36 [INFO] Now listening on: http://localhost:5120
+14:21:36 [INFO] Application started. Press Ctrl+C to shut down.
+14:21:36 [INFO] Hosting environment: Development
+14:21:36 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:23:46 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+14:23:50 [WARN] [{Perf-Possible}] The request {X-RequestData} took 4 seconds.
+14:23:50 [INFO] [LoggingBehavior] Handled {X-RequestData}
+14:25:42 [INFO] Now listening on: https://localhost:7120
+14:25:42 [INFO] Now listening on: http://localhost:5120
+14:25:42 [INFO] Application started. Press Ctrl+C to shut down.
+14:25:42 [INFO] Hosting environment: Development
+14:25:42 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:35:21 [INFO] Now listening on: https://localhost:7120
+14:35:22 [INFO] Now listening on: http://localhost:5120
+14:35:22 [INFO] Application started. Press Ctrl+C to shut down.
+14:35:22 [INFO] Hosting environment: Development
+14:35:22 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:36:54 [INFO] Now listening on: https://localhost:7120
+14:36:54 [INFO] Now listening on: http://localhost:5120
+14:36:54 [INFO] Application started. Press Ctrl+C to shut down.
+14:36:54 [INFO] Hosting environment: Development
+14:36:54 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:37:04 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+14:37:07 [INFO] [LoggingBehavior] Handled {X-RequestData}
+14:38:12 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+14:38:13 [INFO] [LoggingBehavior] Handled {X-RequestData}
+14:41:39 [INFO] Now listening on: https://localhost:7120
+14:41:39 [INFO] Now listening on: http://localhost:5120
+14:41:39 [INFO] Application started. Press Ctrl+C to shut down.
+14:41:39 [INFO] Hosting environment: Development
+14:41:39 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:43:19 [INFO] Now listening on: https://localhost:7120
+14:43:19 [INFO] Now listening on: http://localhost:5120
+14:43:19 [INFO] Application started. Press Ctrl+C to shut down.
+14:43:19 [INFO] Hosting environment: Development
+14:43:19 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+14:58:15 [INFO] Now listening on: https://localhost:7120
+14:58:15 [INFO] Now listening on: http://localhost:5120
+14:58:15 [INFO] Application started. Press Ctrl+C to shut down.
+14:58:15 [INFO] Hosting environment: Development
+14:58:15 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+15:02:05 [INFO] Now listening on: https://localhost:7120
+15:02:05 [INFO] Now listening on: http://localhost:5120
+15:02:05 [INFO] Application started. Press Ctrl+C to shut down.
+15:02:05 [INFO] Hosting environment: Development
+15:02:05 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+15:02:57 [INFO] Now listening on: https://localhost:7120
+15:02:57 [INFO] Now listening on: http://localhost:5120
+15:02:57 [INFO] Application started. Press Ctrl+C to shut down.
+15:02:57 [INFO] Hosting environment: Development
+15:02:57 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+15:27:54 [INFO] Now listening on: https://localhost:7120
+15:27:54 [INFO] Now listening on: http://localhost:5120
+15:27:54 [INFO] Application started. Press Ctrl+C to shut down.
+15:27:54 [INFO] Hosting environment: Development
+15:27:54 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+15:31:43 [INFO] Now listening on: https://localhost:7120
+15:31:43 [INFO] Now listening on: http://localhost:5120
+15:31:43 [INFO] Application started. Press Ctrl+C to shut down.
+15:31:43 [INFO] Hosting environment: Development
+15:31:43 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+15:34:09 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+15:34:12 [INFO] [LoggingBehavior] Handled {X-RequestData}
+15:42:05 [INFO] Now listening on: https://localhost:7120
+15:42:05 [INFO] Now listening on: http://localhost:5120
+15:42:05 [INFO] Application started. Press Ctrl+C to shut down.
+15:42:05 [INFO] Hosting environment: Development
+15:42:05 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+15:51:37 [INFO] Now listening on: https://localhost:7120
+15:51:37 [INFO] Now listening on: http://localhost:5120
+15:51:37 [INFO] Application started. Press Ctrl+C to shut down.
+15:51:37 [INFO] Hosting environment: Development
+15:51:37 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+16:09:20 [INFO] Now listening on: https://localhost:7120
+16:09:21 [INFO] Now listening on: http://localhost:5120
+16:09:21 [INFO] Application started. Press Ctrl+C to shut down.
+16:09:21 [INFO] Hosting environment: Development
+16:09:21 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+16:10:20 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+16:10:25 [WARN] [{Perf-Possible}] The request {X-RequestData} took 4 seconds.
+16:10:25 [INFO] [LoggingBehavior] Handled {X-RequestData}
+16:10:50 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+16:10:51 [INFO] [LoggingBehavior] Handled {X-RequestData}
+16:11:08 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+16:11:09 [INFO] [LoggingBehavior] Handled {X-RequestData}
+16:11:16 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+16:11:17 [INFO] [LoggingBehavior] Handled {X-RequestData}
+16:47:13 [INFO] Now listening on: https://localhost:7120
+16:47:14 [INFO] Now listening on: http://localhost:5120
+16:47:14 [INFO] Application started. Press Ctrl+C to shut down.
+16:47:14 [INFO] Hosting environment: Development
+16:47:14 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+16:49:54 [INFO] Now listening on: https://localhost:7120
+16:49:54 [INFO] Now listening on: http://localhost:5120
+16:49:54 [INFO] Application started. Press Ctrl+C to shut down.
+16:49:54 [INFO] Hosting environment: Development
+16:49:54 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+16:50:40 [INFO] Now listening on: https://localhost:7120
+16:50:40 [INFO] Now listening on: http://localhost:5120
+16:50:40 [INFO] Application started. Press Ctrl+C to shut down.
+16:50:40 [INFO] Hosting environment: Development
+16:50:40 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+16:52:19 [INFO] Now listening on: https://localhost:7120
+16:52:19 [INFO] Now listening on: http://localhost:5120
+16:52:19 [INFO] Application started. Press Ctrl+C to shut down.
+16:52:19 [INFO] Hosting environment: Development
+16:52:19 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+16:59:12 [INFO] Now listening on: https://localhost:7120
+16:59:12 [INFO] Now listening on: http://localhost:5120
+16:59:12 [INFO] Application started. Press Ctrl+C to shut down.
+16:59:12 [INFO] Hosting environment: Development
+16:59:12 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:04:10 [INFO] Now listening on: https://localhost:7120
+17:04:10 [INFO] Now listening on: http://localhost:5120
+17:04:10 [INFO] Application started. Press Ctrl+C to shut down.
+17:04:10 [INFO] Hosting environment: Development
+17:04:10 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:07:56 [INFO] Now listening on: https://localhost:7120
+17:07:57 [INFO] Now listening on: http://localhost:5120
+17:07:57 [INFO] Application started. Press Ctrl+C to shut down.
+17:07:57 [INFO] Hosting environment: Development
+17:07:57 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:08:22 [INFO] Now listening on: https://localhost:7120
+17:08:23 [INFO] Now listening on: http://localhost:5120
+17:08:23 [INFO] Application started. Press Ctrl+C to shut down.
+17:08:23 [INFO] Hosting environment: Development
+17:08:23 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:10:05 [INFO] Now listening on: https://localhost:7120
+17:10:05 [INFO] Now listening on: http://localhost:5120
+17:10:05 [INFO] Application started. Press Ctrl+C to shut down.
+17:10:05 [INFO] Hosting environment: Development
+17:10:05 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:11:19 [INFO] Now listening on: https://localhost:7120
+17:11:19 [INFO] Now listening on: http://localhost:5120
+17:11:19 [INFO] Application started. Press Ctrl+C to shut down.
+17:11:19 [INFO] Hosting environment: Development
+17:11:19 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:13:20 [INFO] Now listening on: https://localhost:7120
+17:13:20 [INFO] Now listening on: http://localhost:5120
+17:13:20 [INFO] Application started. Press Ctrl+C to shut down.
+17:13:20 [INFO] Hosting environment: Development
+17:13:20 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:14:40 [INFO] Now listening on: https://localhost:7120
+17:14:40 [INFO] Now listening on: http://localhost:5120
+17:14:40 [INFO] Application started. Press Ctrl+C to shut down.
+17:14:40 [INFO] Hosting environment: Development
+17:14:40 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:15:50 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+17:15:53 [INFO] [LoggingBehavior] Handled {X-RequestData}
+17:18:26 [INFO] Now listening on: https://localhost:7120
+17:18:26 [INFO] Now listening on: http://localhost:5120
+17:18:26 [INFO] Application started. Press Ctrl+C to shut down.
+17:18:26 [INFO] Hosting environment: Development
+17:18:26 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:21:01 [INFO] Now listening on: https://localhost:7120
+17:21:01 [INFO] Now listening on: http://localhost:5120
+17:21:01 [INFO] Application started. Press Ctrl+C to shut down.
+17:21:01 [INFO] Hosting environment: Development
+17:21:01 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:23:59 [INFO] Now listening on: https://localhost:7120
+17:23:59 [INFO] Now listening on: http://localhost:5120
+17:23:59 [INFO] Application started. Press Ctrl+C to shut down.
+17:23:59 [INFO] Hosting environment: Development
+17:23:59 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:25:08 [INFO] Now listening on: https://localhost:7120
+17:25:08 [INFO] Now listening on: http://localhost:5120
+17:25:08 [INFO] Application started. Press Ctrl+C to shut down.
+17:25:08 [INFO] Hosting environment: Development
+17:25:08 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:28:14 [INFO] Now listening on: https://localhost:7120
+17:28:15 [INFO] Now listening on: http://localhost:5120
+17:28:15 [INFO] Application started. Press Ctrl+C to shut down.
+17:28:15 [INFO] Hosting environment: Development
+17:28:15 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:29:42 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+17:29:48 [WARN] [{Perf-Possible}] The request {X-RequestData} took 6 seconds.
+17:29:48 [INFO] [LoggingBehavior] Handled {X-RequestData}
+17:32:21 [INFO] Now listening on: https://localhost:7120
+17:32:21 [INFO] Now listening on: http://localhost:5120
+17:32:21 [INFO] Application started. Press Ctrl+C to shut down.
+17:32:21 [INFO] Hosting environment: Development
+17:32:21 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:32:56 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+17:32:59 [INFO] [LoggingBehavior] Handled {X-RequestData}
+17:35:49 [INFO] Now listening on: https://localhost:7120
+17:35:49 [INFO] Now listening on: http://localhost:5120
+17:35:49 [INFO] Application started. Press Ctrl+C to shut down.
+17:35:49 [INFO] Hosting environment: Development
+17:35:49 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:36:07 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+17:36:10 [INFO] [LoggingBehavior] Handled {X-RequestData}
+17:39:33 [INFO] Now listening on: https://localhost:7120
+17:39:33 [INFO] Now listening on: http://localhost:5120
+17:39:33 [INFO] Application started. Press Ctrl+C to shut down.
+17:39:33 [INFO] Hosting environment: Development
+17:39:33 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:39:57 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+17:40:06 [WARN] [{Perf-Possible}] The request {X-RequestData} took 9 seconds.
+17:40:06 [INFO] [LoggingBehavior] Handled {X-RequestData}
+17:45:22 [INFO] Now listening on: https://localhost:7120
+17:45:23 [INFO] Now listening on: http://localhost:5120
+17:45:23 [INFO] Application started. Press Ctrl+C to shut down.
+17:45:23 [INFO] Hosting environment: Development
+17:45:23 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+17:45:40 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+17:45:43 [INFO] [LoggingBehavior] Handled {X-RequestData}
+21:09:53 [INFO] Now listening on: https://localhost:7120
+21:09:53 [INFO] Now listening on: http://localhost:5120
+21:09:53 [INFO] Application started. Press Ctrl+C to shut down.
+21:09:53 [INFO] Hosting environment: Development
+21:09:53 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+21:12:55 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+21:12:59 [WARN] [{Perf-Possible}] The request {X-RequestData} took 4 seconds.
+21:12:59 [INFO] [LoggingBehavior] Handled {X-RequestData}
+21:14:03 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+21:14:03 [INFO] [LoggingBehavior] Handled {X-RequestData}
+21:16:50 [INFO] Now listening on: https://localhost:7120
+21:16:51 [INFO] Now listening on: http://localhost:5120
+21:16:51 [INFO] Application started. Press Ctrl+C to shut down.
+21:16:51 [INFO] Hosting environment: Development
+21:16:51 [INFO] Content root path: C:\Users\mohamed.abdaleem\source\repos\ahmd-abdelnaby\Microservices\Services\Inventory\PaymentApi\
+21:16:59 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+21:17:03 [INFO] [LoggingBehavior] Handled {X-RequestData}
