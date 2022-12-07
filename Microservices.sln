@@ -79,6 +79,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryDomain", "Services
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryInfrastructure", "Services\Inventory\PaymentInfrastructure\InventoryInfrastructure.csproj", "{04B6C31E-AA74-42A1-A3CE-ABEAB4726605}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiHelper", "ApiHelper", "{B8EAABAF-0242-40A1-A5F5-5E6985D69D63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiHelper", "Common\ApiHelper\ApiHelper\ApiHelper.csproj", "{83F3E994-AC79-471A-B189-01463A4930C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -181,6 +185,10 @@ Global
 		{04B6C31E-AA74-42A1-A3CE-ABEAB4726605}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04B6C31E-AA74-42A1-A3CE-ABEAB4726605}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04B6C31E-AA74-42A1-A3CE-ABEAB4726605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83F3E994-AC79-471A-B189-01463A4930C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83F3E994-AC79-471A-B189-01463A4930C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83F3E994-AC79-471A-B189-01463A4930C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83F3E994-AC79-471A-B189-01463A4930C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -219,6 +227,8 @@ Global
 		{5EECFEE3-7BA1-4D03-A322-A7301E1E3952} = {327A327C-8B46-47E2-9CB2-713AAED0241A}
 		{F0EAF7CD-7F2E-4BD0-A802-C2278C5E7AA6} = {327A327C-8B46-47E2-9CB2-713AAED0241A}
 		{04B6C31E-AA74-42A1-A3CE-ABEAB4726605} = {327A327C-8B46-47E2-9CB2-713AAED0241A}
+		{B8EAABAF-0242-40A1-A5F5-5E6985D69D63} = {B4CF6534-C485-4FB7-8CA5-805EA310401F}
+		{83F3E994-AC79-471A-B189-01463A4930C8} = {B8EAABAF-0242-40A1-A5F5-5E6985D69D63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82EF3361-5F60-414B-ABAA-BEAD24240B3E}
