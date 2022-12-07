@@ -11,7 +11,7 @@ using Microsoft.Extensions.Options;
 using OrderApplication;
 using OrderApplication.Context;
 using OrderApplication.Extentions;
-using ProductOrderMessage;
+using SharedMessages;
 
 public static class InfrastructureExtensions
 {
@@ -19,7 +19,7 @@ public static class InfrastructureExtensions
     {
         webApplicationBuilder.AddMediatR();
         webApplicationBuilder.AddHealthCheck();
-        webApplicationBuilder.Services.AddCustomMassTransitProducer<ProductOrderMessageModel>( "Development");//,webApplicationBuilder.Environment
+        webApplicationBuilder.Services.AddCustomMassTransitProducer<InventoryQuantities>( "Development");
 
         webApplicationBuilder.Services.AddCors(options =>
         {

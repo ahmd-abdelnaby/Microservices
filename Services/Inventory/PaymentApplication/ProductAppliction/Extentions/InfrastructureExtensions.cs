@@ -9,6 +9,7 @@ using InventoryAppliction.Consumers;
 using InventoryDomain.Interfaces;
 using InventoryInfrastructure;
 using InventoryInfrastructure.UnitOfWork;
+using SharedMessages;
 
 public static class InfrastructureExtensions
 {
@@ -24,7 +25,7 @@ public static class InfrastructureExtensions
         webApplicationBuilder.AddMediatR();
         webApplicationBuilder.AddHealthCheck();
 
-
+        webApplicationBuilder.Services.AddCustomMassTransitConsumer<InventoryConsumer, InventoryQuantities>("Development");
 
         webApplicationBuilder.AddAuthoriz();
 

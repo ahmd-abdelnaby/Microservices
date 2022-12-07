@@ -8,7 +8,6 @@ using OrderApplication.Extentions;
 using Product.Infrastrucure;
 using ProductAppliction.Consumers;
 using ProductAppliction.Models;
-using ProductOrderMessage;
 
 public static class InfrastructureExtensions
 {
@@ -19,9 +18,6 @@ public static class InfrastructureExtensions
         //     options.UseSqlServer("Data Source=localhost\\MSSQLSERVER02;Initial Catalog=Product;Integrated Security=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
         webApplicationBuilder.AddMediatR();
         webApplicationBuilder.AddHealthCheck();
-
-        webApplicationBuilder.Services.AddCustomMassTransitConsumer<OrderConsumer<ProductOrderMessageModel>, ProductOrderMessageModel>("Development");//,webApplicationBuilder.Environment
-
 
         webApplicationBuilder.AddAuthoriz();
 

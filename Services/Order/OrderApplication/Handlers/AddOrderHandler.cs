@@ -5,8 +5,8 @@ using OrderApplication.Commands;
 using OrderApplication.Context;
 using OrderApplication.Models;
 using OrderApplication.ViewModels;
-using ProductOrderMessage;
 using Serilog;
+using SharedMessages;
 
 namespace OrderApplication.Handlers
 {
@@ -34,6 +34,8 @@ namespace OrderApplication.Handlers
                     TotalPrice = request.order.TotalPrice,
                 };
                 order.Details=new List<OrderDetails>();
+                var Qts = new List<ProductQuantities>();
+
                 foreach (var det in request.order.Details)
                 {
                     order.Details.Add(new OrderDetails()
@@ -42,15 +44,24 @@ namespace OrderApplication.Handlers
                         Quantity = det.Quantity,
                         TotalPrice = det.TotalPrice
                     });
+                    Qts.Add(new ProductQuantities()
+                    {
+                         ProductId= det.ProductId,
+                         Quantity =det.Quantity
+                    });
                 }
 
                 await _Context.Orders.AddAsync(order);
                 var result = _Context.SaveChanges();
+                if (result == 4)
+                {
 
-                await this._PublishEndpoint.Publish<ProductOrderMessageModel>(new ProductOrderMessageModel { Cost = (decimal)request.order.TotalPrice });
+                    await this._PublishEndpoint.Publish<InventoryQuantities>(new InventoryQuantities() { Qts= Qts });
 
-                _logger.Information("insert order And it is Published To Consumers");
-                return request.order;
+                    _logger.Information("insert order And it is Published To Consumers");
+                    return request.order;
+                }
+                return null;
             }
             catch (Exception ex)
             {

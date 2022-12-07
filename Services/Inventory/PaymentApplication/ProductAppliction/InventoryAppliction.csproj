@@ -25,6 +25,7 @@
     <ProjectReference Include="..\..\..\..\Common\ErrorHandling\ErrorHandling.csproj" />
     <ProjectReference Include="..\..\..\..\Common\Logging\Logging.csproj" />
     <ProjectReference Include="..\..\..\..\MassTransitConsumer\MassTransitConsumer.csproj" />
+    <ProjectReference Include="..\..\..\..\ProductOrderMessage\SharedMessages.csproj" />
     <ProjectReference Include="..\..\PaymentInfrastructure\InventoryInfrastructure.csproj" />
   </ItemGroup>
 

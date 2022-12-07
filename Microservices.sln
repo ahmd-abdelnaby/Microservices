@@ -53,7 +53,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigurationExtensions", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messages", "Messages", "{5781C45E-E79A-415D-9B43-99D01343C070}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductOrderMessage", "ProductOrderMessage\ProductOrderMessage.csproj", "{4EA57F0A-2425-48F9-9B39-ED765318D64C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedMessages", "ProductOrderMessage\SharedMessages.csproj", "{4EA57F0A-2425-48F9-9B39-ED765318D64C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product.Domain", "Product.Domain\Product.Domain.csproj", "{A5A4C875-D094-46CA-85C9-5DF9CE99F24A}"
 EndProject

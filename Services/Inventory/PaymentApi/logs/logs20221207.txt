@@ -1,0 +1,227 @@
+﻿13:14:43 [INFO] Now listening on: https://localhost:7120
+13:14:44 [INFO] Bus started: "rabbitmq://localhost/"
+13:14:44 [INFO] Now listening on: http://localhost:5120
+13:14:44 [INFO] Application started. Press Ctrl+C to shut down.
+13:14:44 [INFO] Hosting environment: Development
+13:14:44 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+13:21:41 [INFO] Now listening on: https://localhost:7120
+13:21:41 [INFO] Bus started: "rabbitmq://localhost/"
+13:21:41 [INFO] Now listening on: http://localhost:5120
+13:21:41 [INFO] Application started. Press Ctrl+C to shut down.
+13:21:41 [INFO] Hosting environment: Development
+13:21:41 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+13:30:28 [INFO] Now listening on: https://localhost:7120
+13:30:29 [INFO] Bus started: "rabbitmq://localhost/"
+13:30:29 [INFO] Now listening on: http://localhost:5120
+13:30:29 [INFO] Application started. Press Ctrl+C to shut down.
+13:30:29 [INFO] Hosting environment: Development
+13:30:29 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+13:45:35 [INFO] Now listening on: https://localhost:7120
+13:45:35 [INFO] Bus started: "rabbitmq://localhost/"
+13:45:35 [INFO] Now listening on: http://localhost:5120
+13:45:35 [INFO] Application started. Press Ctrl+C to shut down.
+13:45:35 [INFO] Hosting environment: Development
+13:45:35 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+13:58:48 [INFO] Now listening on: https://localhost:7120
+13:58:48 [INFO] Bus started: "rabbitmq://localhost/"
+13:58:48 [INFO] Now listening on: http://localhost:5120
+13:58:48 [INFO] Application started. Press Ctrl+C to shut down.
+13:58:49 [INFO] Hosting environment: Development
+13:58:49 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+14:23:55 [INFO] Now listening on: https://localhost:7120
+14:23:56 [INFO] Bus started: "rabbitmq://localhost/"
+14:23:56 [INFO] Now listening on: http://localhost:5120
+14:23:56 [INFO] Application started. Press Ctrl+C to shut down.
+14:23:56 [INFO] Hosting environment: Development
+14:23:56 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:04:50 [INFO] Now listening on: https://localhost:7120
+15:04:50 [INFO] Bus started: "rabbitmq://localhost/"
+15:04:50 [INFO] Now listening on: http://localhost:5120
+15:04:50 [INFO] Application started. Press Ctrl+C to shut down.
+15:04:50 [INFO] Hosting environment: Development
+15:04:50 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:05:08 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "cc490000-30f1-3c2c-d48f-08dad84e32dc" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:17.0813744")
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 31
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
+   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
+15:06:21 [INFO] Now listening on: https://localhost:7120
+15:06:21 [INFO] Bus started: "rabbitmq://localhost/"
+15:06:21 [INFO] Now listening on: http://localhost:5120
+15:06:21 [INFO] Application started. Press Ctrl+C to shut down.
+15:06:21 [INFO] Hosting environment: Development
+15:06:21 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:06:39 [INFO] Now listening on: https://localhost:7120
+15:06:39 [INFO] Bus started: "rabbitmq://localhost/"
+15:06:39 [INFO] Now listening on: http://localhost:5120
+15:06:39 [INFO] Application started. Press Ctrl+C to shut down.
+15:06:39 [INFO] Hosting environment: Development
+15:06:39 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:07:31 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "b4610000-30f1-3c2c-2c66-08dad853ffd7" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:00.0057470")
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 33
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
+   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
+15:08:01 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "b4610000-30f1-3c2c-d3cb-08dad85411f8" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:00.0004801")
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 33
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
+   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
+15:08:19 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "b4610000-30f1-3c2c-c446-08dad8541ca6" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:00.0001393")
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 33
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
+   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
+15:09:54 [INFO] Now listening on: https://localhost:7120
+15:09:54 [INFO] Bus started: "rabbitmq://localhost/"
+15:09:54 [INFO] Now listening on: http://localhost:5120
+15:09:54 [INFO] Application started. Press Ctrl+C to shut down.
+15:09:54 [INFO] Hosting environment: Development
+15:09:54 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:15:02 [INFO] Now listening on: https://localhost:7120
+15:15:03 [INFO] Bus started: "rabbitmq://localhost/"
+15:15:03 [INFO] Now listening on: http://localhost:5120
+15:15:03 [INFO] Application started. Press Ctrl+C to shut down.
+15:15:03 [INFO] Hosting environment: Development
+15:15:03 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:15:27 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "54360000-30f1-3c2c-025a-08dad8546a22" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:22.6593208")
+System.ArgumentNullException: Value cannot be null. (Parameter 'collection')
+   at System.Collections.Generic.List`1.InsertRange(Int32 index, IEnumerable`1 collection)
+   at System.Collections.Generic.List`1.AddRange(IEnumerable`1 collection)
+   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 33
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
+   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
+15:16:14 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "34ab0000-30f1-3c2c-ae10-08dad8552f96" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:05.8232428")
+System.ArgumentNullException: Value cannot be null. (Parameter 'collection')
+   at System.Collections.Generic.List`1.InsertRange(Int32 index, IEnumerable`1 collection)
+   at System.Collections.Generic.List`1.AddRange(IEnumerable`1 collection)
+   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 33
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
+   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
+15:17:04 [INFO] Now listening on: https://localhost:7120
+15:17:04 [INFO] Bus started: "rabbitmq://localhost/"
+15:17:04 [INFO] Now listening on: http://localhost:5120
+15:17:04 [INFO] Application started. Press Ctrl+C to shut down.
+15:17:04 [INFO] Hosting environment: Development
+15:17:04 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:17:33 [EROR] R-FAULT "rabbitmq://localhost/InventoryQueue" "68220000-30f1-3c2c-1c3f-08dad85565f7" SharedMessages.InventoryQuantities InventoryAppliction.Consumers.InventoryConsumer<SharedMessages.InventoryQuantities>("00:00:01.0164240")
+System.ArgumentNullException: Value cannot be null. (Parameter 'collection')
+   at System.Collections.Generic.List`1.InsertRange(Int32 index, IEnumerable`1 collection)
+   at System.Collections.Generic.List`1.AddRange(IEnumerable`1 collection)
+   at InventoryAppliction.Consumers.InventoryConsumer`1.Consume(ConsumeContext`1 context) in C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApplication\ProductAppliction\Consumers\InventoryConsumer.cs:line 33
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 20
+   at MassTransit.Consumer.DefaultConstructorConsumerFactory`1.Send[T](ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Consumers/Consumer/DefaultConstructorConsumerFactory.cs:line 30
+   at MassTransit.Middleware.ConsumerMessageFilter`2.MassTransit.IFilter<MassTransit.ConsumeContext<TMessage>>.Send(ConsumeContext`1 context, IPipe`1 next) in /_/src/MassTransit/Middleware/ConsumerMessageFilter.cs:line 46
+15:21:19 [INFO] Now listening on: https://localhost:7120
+15:21:19 [INFO] Bus started: "rabbitmq://localhost/"
+15:21:19 [INFO] Now listening on: http://localhost:5120
+15:21:19 [INFO] Application started. Press Ctrl+C to shut down.
+15:21:19 [INFO] Hosting environment: Development
+15:21:19 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:23:58 [INFO] Now listening on: https://localhost:7120
+15:23:58 [INFO] Bus started: "rabbitmq://localhost/"
+15:23:58 [INFO] Now listening on: http://localhost:5120
+15:23:58 [INFO] Application started. Press Ctrl+C to shut down.
+15:23:58 [INFO] Hosting environment: Development
+15:23:58 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:32:42 [INFO] Now listening on: https://localhost:7120
+15:32:42 [INFO] Bus started: "rabbitmq://localhost/"
+15:32:43 [INFO] Now listening on: http://localhost:5120
+15:32:43 [INFO] Application started. Press Ctrl+C to shut down.
+15:32:43 [INFO] Hosting environment: Development
+15:32:43 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:33:27 [INFO] Now listening on: https://localhost:7120
+15:33:28 [INFO] Bus started: "rabbitmq://localhost/"
+15:33:28 [INFO] Now listening on: http://localhost:5120
+15:33:28 [INFO] Application started. Press Ctrl+C to shut down.
+15:33:28 [INFO] Hosting environment: Development
+15:33:28 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:41:50 [INFO] Now listening on: https://localhost:7120
+15:41:51 [INFO] Bus started: "rabbitmq://localhost/"
+15:41:51 [INFO] Now listening on: http://localhost:5120
+15:41:51 [INFO] Application started. Press Ctrl+C to shut down.
+15:41:51 [INFO] Hosting environment: Development
+15:41:51 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:46:38 [INFO] Now listening on: https://localhost:7120
+15:46:39 [INFO] Bus started: "rabbitmq://localhost/"
+15:46:39 [INFO] Now listening on: http://localhost:5120
+15:46:39 [INFO] Application started. Press Ctrl+C to shut down.
+15:46:39 [INFO] Hosting environment: Development
+15:46:39 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:53:09 [INFO] Now listening on: https://localhost:7120
+15:53:10 [INFO] Bus started: "rabbitmq://localhost/"
+15:53:10 [INFO] Now listening on: http://localhost:5120
+15:53:10 [INFO] Application started. Press Ctrl+C to shut down.
+15:53:10 [INFO] Hosting environment: Development
+15:53:10 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+16:01:57 [INFO] Now listening on: https://localhost:7120
+16:01:58 [INFO] Bus started: "rabbitmq://localhost/"
+16:01:58 [INFO] Now listening on: http://localhost:5120
+16:01:58 [INFO] Application started. Press Ctrl+C to shut down.
+16:01:58 [INFO] Hosting environment: Development
+16:01:58 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+16:02:47 [INFO] Now listening on: https://localhost:7120
+16:02:48 [INFO] Bus started: "rabbitmq://localhost/"
+16:02:48 [INFO] Now listening on: http://localhost:5120
+16:02:48 [INFO] Application started. Press Ctrl+C to shut down.
+16:02:48 [INFO] Hosting environment: Development
+16:02:48 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+17:07:49 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+17:07:50 [INFO] Now listening on: https://localhost:7120
+17:07:50 [INFO] Now listening on: http://localhost:5120
+17:07:50 [INFO] Application started. Press Ctrl+C to shut down.
+17:07:50 [INFO] Hosting environment: Development
+17:07:50 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+17:07:51 [INFO] Bus started: "rabbitmq://localhost/"
+17:11:20 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+17:11:21 [INFO] Now listening on: https://localhost:7120
+17:11:21 [INFO] Now listening on: http://localhost:5120
+17:11:21 [INFO] Application started. Press Ctrl+C to shut down.
+17:11:21 [INFO] Hosting environment: Development
+17:11:21 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+17:11:21 [INFO] Bus started: "rabbitmq://localhost/"
+17:14:56 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+17:14:57 [INFO] Now listening on: https://localhost:7120
+17:14:57 [INFO] Now listening on: http://localhost:5120
+17:14:57 [INFO] Application started. Press Ctrl+C to shut down.
+17:14:57 [INFO] Hosting environment: Development
+17:14:57 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+17:14:58 [INFO] Bus started: "rabbitmq://localhost/"
+17:15:48 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+17:15:48 [INFO] Now listening on: https://localhost:7120
+17:15:48 [INFO] Now listening on: http://localhost:5120
+17:15:48 [INFO] Application started. Press Ctrl+C to shut down.
+17:15:48 [INFO] Hosting environment: Development
+17:15:48 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+17:15:49 [INFO] Bus started: "rabbitmq://localhost/"
+17:19:34 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+17:19:36 [WARN] Failed to stop bus: "rabbitmq://localhost/ALIKHALAF_InventoryApi_bus_ebnoyybo6r6na9anbdppo3u1du?temporary=true" (Not Started)
+17:20:25 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+17:20:27 [WARN] Failed to stop bus: "rabbitmq://localhost/ALIKHALAF_InventoryApi_bus_ptqyyybo6r6n39ybbdppo3wtys?temporary=true" (Not Started)
+17:23:49 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+17:23:51 [INFO] Now listening on: https://localhost:7120
+17:23:51 [INFO] Now listening on: http://localhost:5120
+17:23:51 [INFO] Application started. Press Ctrl+C to shut down.
+17:23:51 [INFO] Hosting environment: Development
+17:23:51 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+17:23:51 [INFO] Bus started: "rabbitmq://localhost/"
+17:25:08 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+17:25:09 [INFO] Now listening on: https://localhost:7120
+17:25:09 [INFO] Now listening on: http://localhost:5120
+17:25:09 [INFO] Application started. Press Ctrl+C to shut down.
+17:25:09 [INFO] Hosting environment: Development
+17:25:09 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+17:25:10 [INFO] Bus started: "rabbitmq://localhost/"
+17:29:47 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+17:29:48 [INFO] Now listening on: https://localhost:7120
+17:29:48 [INFO] Now listening on: http://localhost:5120
+17:29:48 [INFO] Application started. Press Ctrl+C to shut down.
+17:29:48 [INFO] Hosting environment: Development
+17:29:48 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+17:29:48 [INFO] Bus started: "rabbitmq://localhost/"

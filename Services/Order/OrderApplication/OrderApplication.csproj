@@ -29,7 +29,7 @@
     <ProjectReference Include="..\..\..\Common\Logging\Logging.csproj" />
     <ProjectReference Include="..\..\..\MassTransitConsumer\MassTransitConsumer.csproj" />
     <ProjectReference Include="..\..\..\MassTransitProducer\MassTransitProducer.csproj" />
-    <ProjectReference Include="..\..\..\ProductOrderMessage\ProductOrderMessage.csproj" />
+    <ProjectReference Include="..\..\..\ProductOrderMessage\SharedMessages.csproj" />
   </ItemGroup>
 
 </Project>

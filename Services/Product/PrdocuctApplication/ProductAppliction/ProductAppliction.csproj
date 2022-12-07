@@ -21,7 +21,7 @@
     <ProjectReference Include="..\..\..\..\Common\Logging\Logging.csproj" />
     <ProjectReference Include="..\..\..\..\MassTransitConsumer\MassTransitConsumer.csproj" />
     <ProjectReference Include="..\..\..\..\Product.Infrastrucure\Product.Infrastrucure.csproj" />
-    <ProjectReference Include="..\..\..\..\ProductOrderMessage\ProductOrderMessage.csproj" />
+    <ProjectReference Include="..\..\..\..\ProductOrderMessage\SharedMessages.csproj" />
   </ItemGroup>
 
 </Project>
