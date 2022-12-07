@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using OrderApplication;
 using OrderApplication.Commands;
 using OrderApplication.Queries;
+using OrderApplication.ViewModels;
 
 namespace OrderApi.Controllers
 {
@@ -36,7 +37,7 @@ namespace OrderApi.Controllers
 
         }
         [HttpPost]
-        public async Task<bool> PostAsync(Order order)
+        public async Task<bool> PostAsync(OrderVM order)
         {
             try
             {

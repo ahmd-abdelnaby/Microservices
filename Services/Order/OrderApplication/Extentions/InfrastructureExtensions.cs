@@ -28,8 +28,8 @@ public static class InfrastructureExtensions
                     .AllowAnyMethod()
                     .AllowAnyHeader());
         });
-        /*webApplicationBuilder.Services.AddDbContext<OrderDBContext>(options =>
-        options.UseSqlServer(webApplicationBuilder.Configuration.GetConnectionString("connectionString")));*/
+        webApplicationBuilder.Services.AddDbContext<OrderDBContext>(options =>
+        options.UseSqlServer(webApplicationBuilder.Configuration.GetConnectionString("connectionString")));
 
         webApplicationBuilder.Services.AddControllers();
         webApplicationBuilder.Services.AddEndpointsApiExplorer();

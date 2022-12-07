@@ -1,6 +1,7 @@
 ﻿using MediatR;
+using OrderApplication.ViewModels;
 
 namespace OrderApplication.Commands
 {
-    public record AddOrderCommand(Order orderModel) : IRequest<Order>;
+    public record AddOrderCommand(OrderVM order) : IRequest<OrderVM>;
 }
