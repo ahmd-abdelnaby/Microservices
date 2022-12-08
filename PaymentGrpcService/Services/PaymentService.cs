@@ -1,4 +1,5 @@
-﻿using Grpc.Core;
+﻿using Google.Protobuf.WellKnownTypes;
+using Grpc.Core;
 using PaymentDomain.Interfaces;
 using System.Linq;
 
@@ -17,7 +18,9 @@ namespace PaymentGrpcService.Services
         {
 
             var payments = _unitOfWork.Repository<PaymentDomain.Entities.Payment>().Table.Where(o => o.OrderId == request.Id).ToList();
-
+            Timestamp test = new Timestamp();
+            
+            Timestamp.FromDateTime(DateTime.UtcNow);
             foreach (var payment in payments)
             {
                 responseStream.WriteAsync(new PaymentDetailsResponse()
@@ -26,7 +29,7 @@ namespace PaymentGrpcService.Services
                     {
                         Id = payment.Id,
                         Amount = double.Parse(payment.Amount.ToString()),
-                        Date = payment.Date.ToString(),
+                        Date = Timestamp.FromDateTime(payment.Date.ToUniversalTime()),
                         OrderId = payment.OrderId,
                         Status = payment.Status
                     }
