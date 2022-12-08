@@ -31,7 +31,7 @@ namespace InventoryAppliction.Handlers
                     list.Add(new ProductAvaliblity
                     {
                         Id = item.ProductId,
-                        Avalible = item.Qauntity > 0 && item.Qauntity > requestedItem.Qauntity,
+                        Avalible = item.Qauntity > 0 && item.Qauntity >= requestedItem.Qauntity,
                         Reason=""
                     });
                 }
