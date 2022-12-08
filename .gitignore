@@ -36,3 +36,5 @@ packages
 /.vs
 /Identityserver/AuthServerInfrastructure/Properties
 /Services/Order/OrderApi/Properties/PublishProfiles
+/Services/Payment/PaymentApi/logs
+/PaymentGrpcService/logs
