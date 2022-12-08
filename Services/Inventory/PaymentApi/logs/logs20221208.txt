@@ -12,3 +12,26 @@
 14:36:04 [INFO] Hosting environment: Development
 14:36:04 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
 14:36:04 [INFO] Bus started: "rabbitmq://localhost/"
+14:48:37 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+14:48:38 [INFO] Now listening on: https://localhost:7121
+14:48:38 [INFO] Now listening on: http://localhost:5121
+14:48:38 [INFO] Application started. Press Ctrl+C to shut down.
+14:48:38 [INFO] Hosting environment: Development
+14:48:38 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+14:48:38 [INFO] Bus started: "rabbitmq://localhost/"
+15:09:58 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+15:09:59 [INFO] Now listening on: https://localhost:7121
+15:09:59 [INFO] Now listening on: http://localhost:5121
+15:09:59 [INFO] Application started. Press Ctrl+C to shut down.
+15:09:59 [INFO] Hosting environment: Development
+15:09:59 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:09:59 [INFO] Bus started: "rabbitmq://localhost/"
+15:14:38 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+15:14:39 [INFO] Now listening on: https://localhost:7121
+15:14:39 [INFO] Now listening on: http://localhost:5121
+15:14:39 [INFO] Application started. Press Ctrl+C to shut down.
+15:14:39 [INFO] Hosting environment: Development
+15:14:39 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+15:14:39 [INFO] Bus started: "rabbitmq://localhost/"
+15:15:23 [INFO] [LoggingBehavior] Handle request={X-RequestData} and response={X-ResponseData}
+15:15:25 [INFO] [LoggingBehavior] Handled {X-RequestData}

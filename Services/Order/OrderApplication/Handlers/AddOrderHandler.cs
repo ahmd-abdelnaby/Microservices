@@ -30,20 +30,13 @@ namespace OrderApplication.Handlers
         }
         public async Task<bool> Handle(AddOrderCommand request, CancellationToken cancellationToken)
         {
-            try
-            {
-                var orderProducts = new List<ProductModel>();
-                foreach (var item in request.order.Details)
-                    orderProducts.Add(new ProductModel
-                    {
-                        Id = item.ProductId,
-                        Qauntity = item.Quantity
-                    });
-                //call Inventory api
-               // var api = new ApiClient<List<ProductModel>, List<ProductAvaliblity>>("Inventory/CehckAvalibleProductQuntity", "https://localhost:7120/api/");
-               // var data = await api.Post(orderProducts);
-               // if (!(data.Where(x => !x.Avalible).Any()))
-                if(true)
+
+            var orderProducts = _mapper.Map<List<OrderDetailsDto>, List<ProductModel>>(request.order.Details);
+             
+            //call Inventory api
+              var api = new ApiClient<List<ProductModel>, List<ProductAvaliblity>>("Inventory/CehckAvalibleProductQuntity", "https://localhost:7121/api/");
+              var data = await api.Post(orderProducts);
+              if (!(data.Where(x => !x.Avalible).Any()))
                 {
 
                     var order = _mapper.Map<OrderDto, Order>(request.order);
@@ -67,11 +60,7 @@ namespace OrderApplication.Handlers
                 }
                 else
                     return false;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
+           
         }
     }
 }

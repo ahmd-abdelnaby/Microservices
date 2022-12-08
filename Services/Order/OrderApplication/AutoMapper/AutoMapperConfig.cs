@@ -24,6 +24,9 @@ namespace OrderApplication.AutoMapper
 
 
             CreateMap<OrderDetailsDto, ProductQuantities>();
+
+            CreateMap<OrderDetailsDto, ProductModel>()
+                .ForMember(Pm => Pm.Id, opt => opt.MapFrom(d => d.ProductId));
         }
     }
 }
