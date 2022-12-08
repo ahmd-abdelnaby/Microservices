@@ -37,7 +37,7 @@ namespace OrderApplication.Handlers
                         Qauntity = item.Quantity
                     });
                 //call Inventory api
-                var api = new ApiClient<List<ProductModel>, List<ProductAvaliblity>>("Inventory/CehckAvalibleProductQuntity", "https://localhost:7120/api/");
+                var api = new ApiClient<List<ProductModel>, List<ProductAvaliblity>>("Inventory/CehckAvalibleProductQuntity", "https://localhost:7121/api/");
                 var data = await api.Post(orderProducts);
                 if (!(data.Where(x => !x.Avalible).Any()))
                 {
