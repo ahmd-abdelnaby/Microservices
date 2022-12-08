@@ -66,7 +66,7 @@ namespace OrderApplication.Handlers
                     }
                     await _Context.Orders.AddAsync(order);
                     var result = _Context.SaveChanges();
-                    if (result == 4)
+                    if (result> 0)
                     {
 
                         await this._PublishEndpoint.Publish<InventoryQuantities>(new InventoryQuantities() { Qts = Qts });
