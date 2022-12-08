@@ -5,6 +5,7 @@ using MediatR;
 using OrderApplication.Commands;
 using OrderApplication.Context;
 using OrderApplication.DTO;
+using OrderApplication.Enums;
 using OrderApplication.Models;
 using OrderApplication.ViewModels;
 using Serilog;
@@ -43,9 +44,9 @@ namespace OrderApplication.Handlers
 
                     Order order = new Order()
                     {
-                        OrderDate = request.order.OrderDate,
-                        PaymentDate = request.order.PaymentDate,
-                        Status = request.order.Status,
+                        OrderDate = DateTime.Now,
+                        PaymentDate = null,
+                        Status = OrderStatus.NotPaid,
                         TotalPrice = request.order.TotalPrice,
                     };
                     order.Details = new List<OrderDetails>();

@@ -10,12 +10,7 @@ namespace OrderApplication.ViewModels
 {
     public class OrderVM
     {
-        public DateTime OrderDate { get; set; }
         public double TotalPrice { get; set; }
-
-        public OrderStatus Status { get; set; }
-        public DateTime PaymentDate { get; set; }
-
         public List<OrderDetailsVM> Details { get; set; }
 
     }
