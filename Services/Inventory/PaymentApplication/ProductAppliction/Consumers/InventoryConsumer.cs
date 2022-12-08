@@ -29,23 +29,22 @@ namespace InventoryAppliction.Consumers
             
                 if (context.Message != null)
                 {
-                  InventoryQuantities newInv = context.Message as InventoryQuantities;
-                  var x=  new InventoryQuantitiesCommand(newInv);
-                foreach (var Inv in newInv.Qts)
+                  InventoryQuantities newInventory = context.Message ;
+                foreach (var Inventory in newInventory.ProductQuantities)
                 {
-                    var OldInv = _Context.Inventorys.FirstOrDefault(x => x.ProductId == Inv.ProductId);
+                    var OldInventory = _Context.Inventorys.FirstOrDefault(x => x.ProductId == Inventory.ProductId);
 
-                    if (OldInv != null)
+                    if (OldInventory != null)
                     {
-                        if (OldInv.Qauntity >= Inv.Quantity)
+                        if (OldInventory.Qauntity >= Inventory.Quantity)
                         {
-                            OldInv.Qauntity -= Inv.Quantity;
-                            _Context.Inventorys.Update(OldInv);
-                            _Context.SaveChanges();
+                            OldInventory.Qauntity -= Inventory.Quantity;
+                            _Context.Inventorys.Update(OldInventory);
                         }
                     }
                 }
-                }
+                _Context.SaveChanges();
+            }
 
 
         }

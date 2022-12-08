@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OrderApplication.ViewModels
+namespace OrderApplication.DTO
 {
-    public class OrderDetailsVM
+    public class OrderDetailsDto
     {
-       // public int OderId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
         public double TotalPrice { get; set; }
-
     }
 }
