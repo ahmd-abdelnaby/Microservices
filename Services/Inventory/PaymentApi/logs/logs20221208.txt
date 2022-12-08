@@ -1,0 +1,14 @@
+﻿14:35:15 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+14:35:16 [INFO] Now listening on: https://localhost:7120
+14:35:16 [INFO] Now listening on: http://localhost:5120
+14:35:16 [INFO] Application started. Press Ctrl+C to shut down.
+14:35:16 [INFO] Hosting environment: Development
+14:35:16 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+14:35:17 [INFO] Bus started: "rabbitmq://localhost/"
+14:36:03 [INFO] Configured endpoint InventoryQueue, Consumer: InventoryAppliction.Consumers.InventoryConsumer
+14:36:04 [INFO] Now listening on: https://localhost:7120
+14:36:04 [INFO] Now listening on: http://localhost:5120
+14:36:04 [INFO] Application started. Press Ctrl+C to shut down.
+14:36:04 [INFO] Hosting environment: Development
+14:36:04 [INFO] Content root path: C:\Users\Ali.khalaf\Desktop\Last\Microservices\Services\Inventory\PaymentApi\
+14:36:04 [INFO] Bus started: "rabbitmq://localhost/"

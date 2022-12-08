@@ -30,7 +30,7 @@ namespace InventoryAppliction.Consumers
                 if (context.Message != null)
                 {
                   InventoryQuantities newInv = context.Message as InventoryQuantities;
-                foreach (var Inv in newInv.Qts)
+                foreach (var Inv in newInv.ProductQuantities)
                 {
                     var OldInv = _Context.Inventorys.FirstOrDefault(x => x.ProductId == Inv.ProductId);
 

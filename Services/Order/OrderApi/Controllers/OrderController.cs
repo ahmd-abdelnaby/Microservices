@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OrderApplication;
 using OrderApplication.Commands;
+using OrderApplication.DTO;
 using OrderApplication.Queries;
-using OrderApplication.ViewModels;
 
 namespace OrderApi.Controllers
 {
@@ -37,7 +37,7 @@ namespace OrderApi.Controllers
 
         }
         [HttpPost]
-        public async Task<bool> PostAsync(OrderVM order)
+        public async Task<bool> PostAsync(OrderDto order)
         {
             try
             {
