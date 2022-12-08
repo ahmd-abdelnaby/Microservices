@@ -36,9 +36,9 @@ namespace InventoryAppliction.Consumers
 
                     if (OldInventory != null)
                     {
-                        if (OldInventory.Qauntity >= Inventory.Quantity)
+                        if (OldInventory.Quantity >= Inventory.Quantity)
                         {
-                            OldInventory.Qauntity -= Inventory.Quantity;
+                            OldInventory.Quantity -= Inventory.Quantity;
                             _Context.Inventorys.Update(OldInventory);
                         }
                     }

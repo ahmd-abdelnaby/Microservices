@@ -26,7 +26,7 @@ namespace InventoryAppliction.Handlers
                 list.Add(new InventoryModel
                 {
                     ProductId = item.ProductId,
-                    Qauntity = item.Qauntity,
+                    Qauntity = item.Quantity,
                 });
             return list;
         }
