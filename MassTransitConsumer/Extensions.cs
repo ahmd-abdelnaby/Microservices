@@ -62,7 +62,8 @@ namespace MassTransitConsumer
                 {
                     services.AddMassTransit(config =>
                     {
-
+                        config.AddSagaStateMachine<OrderStateMachine, OrderState>()
+                                    .InMemoryRepository();
                         config.UsingRabbitMq((context, cfg) =>
                         {
                             cfg.Host(host, h =>
