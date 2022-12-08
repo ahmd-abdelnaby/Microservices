@@ -40,11 +40,11 @@ namespace InventoryAppliction.Consumers
                         {
                             OldInv.Qauntity -= Inv.Quantity;
                             _Context.Inventorys.Update(OldInv);
-                            _Context.SaveChanges();
                         }
                     }
                 }
-                }
+                _Context.SaveChanges();
+            }
 
 
         }

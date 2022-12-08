@@ -1,4 +1,5 @@
 ﻿using ApiHelper;
+using AutoMapper;
 using MassTransit;
 using MassTransitConsumer;
 using MediatR;
@@ -18,11 +19,14 @@ namespace OrderApplication.Handlers
         private readonly ILogger _logger;
         private readonly IPublishEndpoint _PublishEndpoint;
         private readonly OrderDBContext _Context;
-        public AddOrderHandler(ILogger logger, IPublishEndpoint PublishEndpoint, OrderDBContext Context)
+        private readonly IMapper _mapper;
+
+        public AddOrderHandler(ILogger logger, IPublishEndpoint PublishEndpoint, OrderDBContext Context, IMapper mapper)
         {
             _logger = logger;
             _PublishEndpoint = PublishEndpoint;
             _Context = Context;
+            _mapper= mapper;    
 
         }
         public async Task<bool> Handle(AddOrderCommand request, CancellationToken cancellationToken)
@@ -42,6 +46,7 @@ namespace OrderApplication.Handlers
                 if (!(data.Where(x => !x.Avalible).Any()))
                 {
 
+                   // var order = _mapper.Map<OrderDto, Order>(request.order);
                     Order order = new Order()
                     {
                         OrderDate = DateTime.Now,
