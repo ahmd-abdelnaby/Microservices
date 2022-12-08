@@ -11,26 +11,26 @@ namespace MassTransitConsumer.Saga
     {
         public OrderStateMachine()
         {
-            Event(() => SubmitOrder, x => x.CorrelateById(context => context.Message.OrderId));
+            //Event(() => SubmitOrder, x => x.CorrelateById(context => context.Message.OrderId));
 
-            Initially(
-                When(SubmitOrder)
-                    .Then(x => x.Saga.OrderDate = x.Message.OrderDate)
-                    .TransitionTo(Submitted),
-                When(OrderAccepted)
-                    .TransitionTo(Accepted));
+            //Initially(
+            //    When(SubmitOrder)
+            //        .Then(x => x.Saga.OrderDate = x.Message.OrderDate)
+            //        .TransitionTo(Submitted),
+            //    When(OrderAccepted)
+            //        .TransitionTo(Accepted));
 
-            During(Submitted,
-                When(OrderAccepted)
-                    .TransitionTo(Accepted));
+            //During(Submitted,
+            //    When(OrderAccepted)
+            //        .TransitionTo(Accepted));
 
-            During(Accepted,
-                When(SubmitOrder)
-                    .Then(x => x.Saga.OrderDate = x.Message.OrderDate));
+            //During(Accepted,
+            //    When(SubmitOrder)
+            //        .Then(x => x.Saga.OrderDate = x.Message.OrderDate));
         }
 
         public Event<SubmitOrder> SubmitOrder { get; private set; }
-        public Event<OrderAccepted> OrderAccepted { get; private set; }
+       // public Event<OrderAccepted> OrderAccepted { get; private set; }
         public State Submitted { get; private set; }
         public State Accepted { get; private set; }
     }
