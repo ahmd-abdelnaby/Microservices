@@ -30,17 +30,4 @@ namespace OrderApplication.Context
             .WithOne(d => d.Order).HasForeignKey(d => d.OderId);
         }
     }
-
-    public class BloggingContextFactory : IDesignTimeDbContextFactory<OrderDBContext>
-    {
-        public OrderDBContext CreateDbContext(string[] args)
-        {
-            var optionsBuilder = new DbContextOptionsBuilder<OrderDBContext>();
-            optionsBuilder.UseSqlServer("Data Source=197.168.1.248;Initial Catalog=MirageMSOrder;;User Id=sa;Password=ExcelSystems@2017;TrustServerCertificate=True;");
-
-            return new OrderDBContext(optionsBuilder.Options);
-        }
-    }
-
-
 }
