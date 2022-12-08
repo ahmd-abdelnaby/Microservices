@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using InventoryApplication.Queries;
 using InventoryAppliction;
 using InventoryAppliction.Commands;
+using InventoryAppliction.Models;
 
 namespace InventoryApi.Controllers
 {
@@ -48,6 +49,13 @@ namespace InventoryApi.Controllers
             {
                 return false;
             }
+        }
+        [HttpPost]
+        [Route("CehckAvalibleProductQuntity")]
+
+        public async Task<List<ProductAvaliblity>> CehckAvalibleProductQuntity([FromBody] List<ProductModel> Products)
+        {
+               return await _mediator.Send(new CheckAvalibleProductQuntityQuery(Products));
         }
     }
 }
