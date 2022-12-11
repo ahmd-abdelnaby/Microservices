@@ -1,8 +1,10 @@
-﻿using InventoryAppliction.Commands;
+﻿using InventoryApplication.Queries;
+using InventoryAppliction.Commands;
 using InventoryDomain.Entities;
 using InventoryDomain.Interfaces;
 using InventoryInfrastructure;
 using MassTransit;
+using MassTransit.Mediator;
 using MassTransit.SagaStateMachine;
 using MassTransitConsumer;
 using SharedMessages;
@@ -16,39 +18,19 @@ namespace InventoryAppliction.Consumers
 {
     public class InventoryConsumer : IConsumer<InventoryQuantities>
     {
-        private readonly InventoryContext _Context;
+        private readonly IMediator _mediator;
 
-       
-        public InventoryConsumer(InventoryContext Context)
-        { 
-            _Context=Context;   
+
+        public InventoryConsumer(IMediator mediator)
+        {
+            _mediator = mediator;
         }
 
         public async Task Consume(ConsumeContext<InventoryQuantities> context)
         {
-            
-                if (context.Message != null)
-                {
-                  InventoryQuantities newInventory = context.Message ;
-                foreach (var Inventory in newInventory.ProductQuantities)
-                {
-                    var OldInventory = _Context.Inventorys.FirstOrDefault(x => x.ProductId == Inventory.ProductId);
-
-                    if (OldInventory != null)
-                    {
-                        if (OldInventory.Qauntity >= Inventory.Quantity)
-                        {
-                            OldInventory.Qauntity -= Inventory.Quantity;
-                            _Context.Inventorys.Update(OldInventory);
-                        }
-                    }
-                }
-                _Context.SaveChanges();
-            }
-
-
+             await _mediator.Send(new UpdateInventoryQuantitiesCommand(context.Message));
         }
 
-        
+
     }
 }

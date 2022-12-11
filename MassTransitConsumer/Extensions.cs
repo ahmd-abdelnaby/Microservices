@@ -17,117 +17,102 @@ namespace MassTransitConsumer
 {
     public static class Extensions
     {
+        
+
         private static bool? _isRunningInContainer;
 
         private static bool IsRunningInContainer => _isRunningInContainer ??=
             bool.TryParse(Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER"), out var inContainer) &&
             inContainer;
 
-        public static IServiceCollection AddCustomMassTransitConsumer<TConsumer,TMessage>( this IServiceCollection services, string env)
-             where TConsumer : class,  IConsumer where TMessage : class
+        public static IServiceCollection AddCustomMassTransitConsumer<TConsumer, TMessage>(this IServiceCollection services, string env)
+             where TConsumer : class, IConsumer where TMessage : class
         {
-
-/*
-            var types = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes())
-                        .Where(x => x.IsAssignableTo(typeof(TConsumer))
-                                    && !x.IsInterface
-                                    && !x.IsAbstract
-                                    *//*&& !x.IsGenericType*//*).FirstOrDefault();
-
            
-                var consumers = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes())
-                           .Where(x => x.IsAssignableTo(typeof(IConsumer<>).MakeGenericType(typeof(TConsumer)))).fi();*/
-            
-
-            /*var type =  Assembly.GetAssembly(typeof(TConsumer)).GetTypes()
-           .Where(myType => myType.IsClass && !myType.IsAbstract && myType.IsSubclassOf(typeof(TConsumer))).FirstOrDefault().GetType();
-*/
- /*           IEnumerable<asd> exporters = typeof(asd)
-    .Assembly.GetTypes()
-    .Where(t => t.IsSubclassOf(typeof(asd)) && !t.IsAbstract)
-    .Select(t => (TConsumer)Activator.CreateInstance(asd)).ToList();*/
-
-            // if (!env.HostingEnvironment.IsProduction())
-            if (env.Equals("Development"))
-            {
-              /*  var x=clazz.GetType();
-                var xxx =clazz.GetTypeInfo();
-                var xx=clazz.GetTypeName();*/
-                
-                var rabbitMqOptions = services.GetOptions<RabbitMqOptions>("RabbitMq");
-                var host = IsRunningInContainer ? "rabbitmq" : rabbitMqOptions.HostName;
-
-                if (rabbitMqOptions.ExchangeType.Equals("Direct")
-                       || rabbitMqOptions.ExchangeType.Equals("Topic"))
+                // if (!env.HostingEnvironment.IsProduction())
+                if (env.Equals("Development"))
                 {
-                    services.AddMassTransit(config =>
+                  
+                    var rabbitMqOptions = services.GetOptions<RabbitMqOptions>("RabbitMq");
+                    var host = IsRunningInContainer ? "rabbitmq" : rabbitMqOptions.HostName;
+
+                    if (rabbitMqOptions.ExchangeType.Equals("Direct")
+                           || rabbitMqOptions.ExchangeType.Equals("Topic"))
                     {
-                        //config.AddSagaStateMachine<OrderStateMachine, OrderState>()
-                        //            .InMemoryRepository();
-                        config.UsingRabbitMq((context, cfg) =>
+                        services.AddMassTransit(config =>
                         {
-                            cfg.Host(host, h =>
+
+                            config.AddConsumer<TConsumer>();
+
+                            //config.AddSagaStateMachine<OrderStateMachine, OrderState>()
+                            //            .InMemoryRepository();
+                            config.UsingRabbitMq((context, cfg) =>
                             {
-                                h.Username(rabbitMqOptions.UserName);
-                                h.Password(rabbitMqOptions.Password);
-                            });
-
-                            cfg.ReceiveEndpoint(rabbitMqOptions.QueueName, re =>     //Queue Name
-                            {
-
-
-                              //  re.Consumer<TConsumer>();
-
-                                re.ConfigureConsumeTopology = false;
-                                // re.SetQuorumQueue();
-                                if (rabbitMqOptions.IsLasyQueue)
+                                cfg.Host(host, h =>
                                 {
-                                    re.SetQueueArgument("declare", "lazy");
-                                }
-
-                                re.Bind(rabbitMqOptions.ExchangeName, e =>
-                                {
-                                    e.RoutingKey = rabbitMqOptions.RouteKey;
-                                    e.ExchangeType = rabbitMqOptions.ExchangeType.Equals("Direct") ? ExchangeType.Direct : ExchangeType.Topic;
+                                    h.Username(rabbitMqOptions.UserName);
+                                    h.Password(rabbitMqOptions.Password);
                                 });
 
+                                cfg.ReceiveEndpoint(rabbitMqOptions.QueueName, re =>     //Queue Name
+                                {
+                                    re.ConfigureConsumer<TConsumer>(context);
+
+
+                                    //  re.Consumer<TConsumer>();
+
+                                    re.ConfigureConsumeTopology = false;
+                                    // re.SetQuorumQueue();
+                                    if (rabbitMqOptions.IsLasyQueue)
+                                    {
+                                        re.SetQueueArgument("declare", "lazy");
+                                    }
+
+                                    re.Bind(rabbitMqOptions.ExchangeName, e =>
+                                    {
+                                        e.RoutingKey = rabbitMqOptions.RouteKey;
+                                        e.ExchangeType = rabbitMqOptions.ExchangeType.Equals("Direct") ? ExchangeType.Direct : ExchangeType.Topic;
+                                    });
+
+                                });
+
+
                             });
-
-
                         });
-                    });
-                }
+                    }
 
-                else
-                {
-                    services.AddMassTransit(config =>
+                    else
                     {
-                     
-                         config.AddConsumer<TConsumer>();
-
-                        config.UsingRabbitMq((ctx, cfg) =>
+                        services.AddMassTransit(config =>
                         {
-                            cfg.Host(host, h =>
-                            {
-                                h.Username(rabbitMqOptions.UserName);
-                                h.Password(rabbitMqOptions.Password);
-                            });
-                            cfg.ReceiveEndpoint(rabbitMqOptions.QueueName, c =>
-                            {
-                              c.ConfigureConsumer<TConsumer>(ctx);
 
+                            config.AddConsumer<TConsumer>();
+
+                            config.UsingRabbitMq((ctx, cfg) =>
+                            {
+                                cfg.Host(host, h =>
+                                {
+                                    h.Username(rabbitMqOptions.UserName);
+                                    h.Password(rabbitMqOptions.Password);
+                                });
+                                cfg.ReceiveEndpoint(rabbitMqOptions.QueueName, c =>
+                                {
+                                    c.ConfigureConsumer<TConsumer>(ctx);
+
+                                });
                             });
                         });
-                    });
-                }
-                    
+                    }
+                services.AddMediator(cfg =>
+                {
+                    cfg.AddConsumer<TConsumer>();
+                });
+
             }
 
-            return services;
-        }
-
-       
-
+                return services;
+          
+            }
         
     }
 }
