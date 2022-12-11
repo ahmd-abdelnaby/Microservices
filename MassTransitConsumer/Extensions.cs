@@ -103,10 +103,7 @@ namespace MassTransitConsumer
                             });
                         });
                     }
-                services.AddMediator(cfg =>
-                {
-                    cfg.AddConsumer<TConsumer>();
-                });
+           
 
             }
 

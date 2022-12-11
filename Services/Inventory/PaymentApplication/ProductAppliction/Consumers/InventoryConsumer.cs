@@ -28,7 +28,7 @@ namespace InventoryAppliction.Consumers
 
         public async Task Consume(ConsumeContext<InventoryQuantities> context)
         {
-              var x = await _mediator.Send( new UpdateInventoryQuantitiesCommand(context.Message));
+             await _mediator.Send( new UpdateInventoryQuantitiesCommand(context.Message));
         }
 
 

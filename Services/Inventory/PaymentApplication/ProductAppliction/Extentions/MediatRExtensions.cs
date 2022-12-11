@@ -10,7 +10,6 @@ public static class MediatRExtensions
     public static WebApplicationBuilder AddMediatR(this WebApplicationBuilder webApplicationBuilder)
     {
         webApplicationBuilder.Services.AddMediatR(Assembly.GetExecutingAssembly());
-       // webApplicationBuilder.Services.AddMediatR(typeof(UpdateInventoryQuantitiesCommand));
         webApplicationBuilder.Services.AddSingleton(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
         return webApplicationBuilder;
     }
