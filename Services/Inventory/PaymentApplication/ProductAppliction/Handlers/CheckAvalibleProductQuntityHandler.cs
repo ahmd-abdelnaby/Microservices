@@ -21,27 +21,27 @@ namespace InventoryAppliction.Handlers
         public async Task<List<ProductAvaliblity>> Handle(CheckAvalibleProductQuntityQuery request, CancellationToken cancellationToken)
         {
             List<ProductAvaliblity> list = new List<ProductAvaliblity>();
-            var data = _unitOfWork.Repository<Inventory>().Table.ToList();
-            foreach (var item in data)
+            foreach (var requestItem in request.Products)
             {
-                var requestedItem = request.Products.Where(x => x.Id== item.ProductId).FirstOrDefault();
-                if (requestedItem!=null)
+                var item = _unitOfWork.Repository<Inventory>().Table.Where(x=>x.ProductId== requestItem.Id).FirstOrDefault();
+                if (item != null)
                 {
-
                     list.Add(new ProductAvaliblity
                     {
-                        Id = item.ProductId,
-                        Avalible = item.Qauntity > 0 && item.Qauntity >= requestedItem.Qauntity,
-                        Reason=""
+                        Id = requestItem.Id,
+                        Avalible = item.Quantity > 0 && requestItem.Quantity <= item.Quantity,
+                        Reason = ""
                     });
                 }
                 else
+                {
                     list.Add(new ProductAvaliblity
                     {
-                        Id = item.ProductId,
+                        Id = requestItem.Id,
                         Avalible = false,
-                        Reason="wrong product Id"
+                        Reason = "wrong product Id"
                     });
+                }
             }
             return list;
         }

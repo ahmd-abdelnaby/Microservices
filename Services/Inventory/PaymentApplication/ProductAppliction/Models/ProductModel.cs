@@ -9,6 +9,6 @@ namespace InventoryAppliction.Models
     public class ProductModel
     {
         public int Id { get; set; }
-        public int Qauntity { get; set; }
+        public int Quantity { get; set; }
     }
 }

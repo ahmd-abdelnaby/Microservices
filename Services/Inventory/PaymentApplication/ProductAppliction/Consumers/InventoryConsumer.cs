@@ -4,9 +4,9 @@ using InventoryDomain.Entities;
 using InventoryDomain.Interfaces;
 using InventoryInfrastructure;
 using MassTransit;
-using MassTransit.Mediator;
 using MassTransit.SagaStateMachine;
 using MassTransitConsumer;
+using MediatR;
 using SharedMessages;
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ namespace InventoryAppliction.Consumers
 
         public async Task Consume(ConsumeContext<InventoryQuantities> context)
         {
-             await _mediator.Send(new UpdateInventoryQuantitiesCommand(context.Message));
+              var x = await _mediator.Send( new UpdateInventoryQuantitiesCommand(context.Message));
         }
 
 
