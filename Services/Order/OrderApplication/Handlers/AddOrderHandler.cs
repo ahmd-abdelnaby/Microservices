@@ -51,8 +51,9 @@ namespace OrderApplication.Handlers
                     {
 
                         await this._PublishEndpoint.Publish<InventoryQuantities>(new InventoryQuantities() { ProductQuantities = ProductQuantities });
+                        await this._PublishEndpoint.Publish<OrderPaymentMEssage>(new OrderPaymentMEssage() { TotalPrice = request.order.TotalPrice });
 
-                        _logger.Information("insert order And it is Published To Consumers");
+                    _logger.Information("insert order And it is Published To Consumers");
                         return true;
                     }
                     else

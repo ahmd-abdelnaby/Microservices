@@ -25,7 +25,7 @@ public static class InfrastructureExtensions
         webApplicationBuilder.AddMediatR();
         webApplicationBuilder.AddHealthCheck();
 
-        webApplicationBuilder.Services.AddCustomMassTransitConsumer<InventoryConsumer, InventoryQuantities>("Development");
+        webApplicationBuilder.Services.AddCustomMassTransitConsumer<GenericInventoryConsumer, InventoryQuantities>("Development");
 
         webApplicationBuilder.AddAuthoriz();
 

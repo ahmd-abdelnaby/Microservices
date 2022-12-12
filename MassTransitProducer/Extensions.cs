@@ -45,6 +45,11 @@ namespace MassTransitProducer
                         if (rabbitMqOptions.ExchangeType.Equals("Direct")
                        || rabbitMqOptions.ExchangeType.Equals("Topic"))
                         {
+
+                            var allTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes()).ToList();
+
+                            var MessageTypes = allTypes.Where(x => x.IsAssignableTo(typeof(TMessage))).ToList();
+
                             cfg.Message<TMessage>
                           (e => e.SetEntityName(rabbitMqOptions.ExchangeName)); // name of the primary exchange
 
