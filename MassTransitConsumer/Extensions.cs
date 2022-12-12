@@ -1,6 +1,7 @@
 ﻿using ConfigurationExtensions;
 using MassTransit;
 using MassTransit.Internals;
+using MassTransitConsumer.Saga;
 using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -46,10 +47,10 @@ namespace MassTransitConsumer
                         services.AddMassTransit(config =>
                         {
 
-                           // config.AddConsumer<TConsumer>();
+                            // config.AddConsumer<TConsumer>();
+                            config.AddSagaStateMachine<OrderStateMachine, OrderState>(typeof(OrderStateMachineDefinition))
+                                                                   .InMemoryRepository();
 
-                            //config.AddSagaStateMachine<OrderStateMachine, OrderState>()
-                            //            .InMemoryRepository();
                             config.UsingRabbitMq((context, cfg) =>
                             {
                                 cfg.Host(host, h =>
@@ -57,15 +58,9 @@ namespace MassTransitConsumer
                                     h.Username(rabbitMqOptions.UserName);
                                     h.Password(rabbitMqOptions.Password);
                                 });
-
+                                cfg.ConfigureEndpoints(context);
                                 cfg.ReceiveEndpoint(rabbitMqOptions.QueueName, re =>     //Queue Name
                                 {
-                                    
-                                    
-                                 //   re.ConfigureConsumer<TConsumer>(context);
-
-
-                                    //  re.Consumer<TConsumer>();
 
                                     re.ConfigureConsumeTopology = false;
                                     // re.SetQuorumQueue();
@@ -77,7 +72,7 @@ namespace MassTransitConsumer
                                     re.Bind(rabbitMqOptions.ExchangeName, e =>
                                     {
                                         e.RoutingKey = rabbitMqOptions.RouteKey;
-                                        e.ExchangeType = rabbitMqOptions.ExchangeType.Equals("Direct") ? ExchangeType.Direct : ExchangeType.Topic;
+                                        e.ExchangeType = rabbitMqOptions.ExchangeType.Equals("Direct") ? ExchangeType.Fanout : ExchangeType.Fanout;
                                     });
 
                                 });
@@ -91,6 +86,10 @@ namespace MassTransitConsumer
                     {
                         services.AddMassTransit(config =>
                         {
+                            config.AddSagaStateMachine<OrderStateMachine, OrderState>(typeof(OrderStateMachineDefinition))
+                                       .InMemoryRepository();
+
+
                             var allTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes()).ToList();
 
                             var ConsumerTypes = allTypes.Where(x => x.IsAssignableTo(typeof(TConsumer))).ToList();
@@ -108,6 +107,7 @@ namespace MassTransitConsumer
                                         h.Username(rabbitMqOptions.UserName);
                                         h.Password(rabbitMqOptions.Password);
                                     });
+                                    //cfg.ConfigureEndpoints(ctx);
                                     if (ConsumerTypes.Any(x=>x.Name.Equals(typeof(TConsumer).Name)))
                                     {
                                         // rabbitSettings.QueueName => service-b

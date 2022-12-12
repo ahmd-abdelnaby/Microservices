@@ -16,19 +16,19 @@ using System.Threading.Tasks;
 
 namespace InventoryAppliction.Consumers
 {
-    public class InventoryConsumer : IConsumer<InventoryQuantities>
+    public class SubmitOrderConsumer : IConsumer<SubmitOrder>, GenericInventoryConsumer
     {
         private readonly IMediator _mediator;
 
 
-        public InventoryConsumer(IMediator mediator)
+        public SubmitOrderConsumer(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        public async Task Consume(ConsumeContext<InventoryQuantities> context)
+        public async Task Consume(ConsumeContext<SubmitOrder> context)
         {
-             await _mediator.Send( new UpdateInventoryQuantitiesCommand(context.Message));
+             //await _mediator.Send( new UpdateInventoryQuantitiesCommand(context.Message));
         }
 
 
