@@ -108,7 +108,7 @@ namespace MassTransitConsumer
                                         h.Password(rabbitMqOptions.Password);
                                     });
                                     cfg.ConfigureEndpoints(ctx);
-                                    if (ConsumerTypes.Any(x=>x.Name.Equals(typeof(TConsumer).Name)))
+                                    if (ConsumerTypes.Any(x=>x.Name != (typeof(TConsumer).Name)))
                                     {
                                         // rabbitSettings.QueueName => service-b
                                         //cfg.ReceiveEndpoint(rabbitMqOptions.QueueName, e =>
