@@ -48,7 +48,7 @@ namespace MassTransitConsumer
                         {
 
                             // config.AddConsumer<TConsumer>();
-                            config.AddSagaStateMachine<OrderStateMachine, OrderState>(typeof(OrderStateMachineDefinition))
+                            config.AddSagaStateMachine<OrderStateMachine, OrderState>()
                                                                    .InMemoryRepository();
 
                             config.UsingRabbitMq((context, cfg) =>
@@ -86,7 +86,7 @@ namespace MassTransitConsumer
                     {
                         services.AddMassTransit(config =>
                         {
-                            config.AddSagaStateMachine<OrderStateMachine, OrderState>(typeof(OrderStateMachineDefinition))
+                            config.AddSagaStateMachine<OrderStateMachine, OrderState>()
                                        .InMemoryRepository();
 
 
@@ -107,15 +107,15 @@ namespace MassTransitConsumer
                                         h.Username(rabbitMqOptions.UserName);
                                         h.Password(rabbitMqOptions.Password);
                                     });
-                                    //cfg.ConfigureEndpoints(ctx);
+                                    cfg.ConfigureEndpoints(ctx);
                                     if (ConsumerTypes.Any(x=>x.Name.Equals(typeof(TConsumer).Name)))
                                     {
                                         // rabbitSettings.QueueName => service-b
-                                        cfg.ReceiveEndpoint(rabbitMqOptions.QueueName, e =>
-                                        {
-                                            // e.UseConsumeFilter(typeof(InboxFilter<>), context);
-                                            e.ConfigureConsumers(ctx);
-                                        });
+                                        //cfg.ReceiveEndpoint(rabbitMqOptions.QueueName, e =>
+                                        //{
+                                        //    // e.UseConsumeFilter(typeof(InboxFilter<>), context);
+                                        //    e.ConfigureConsumers(ctx);
+                                        //});
                                     }
                                 });
                             

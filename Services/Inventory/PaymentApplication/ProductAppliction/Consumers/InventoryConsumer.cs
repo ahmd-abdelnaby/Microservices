@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace InventoryAppliction.Consumers
 {
-    public class InventoryConsumer : IConsumer<InventoryQuantities>
+    public class InventoryConsumer : IConsumer<InventoryQuantities>, GenericInventoryConsumer
     {
         private readonly IMediator _mediator;
 

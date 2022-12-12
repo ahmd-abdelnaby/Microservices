@@ -54,7 +54,7 @@ namespace OrderApplication.Handlers
                     if (result> 0)
                     {
 
-                        await this._PublishEndpoint.Publish<SubmitOrder>(new { OrderId = NewId.NextGuid(), OrderDate = DateTime.Now });
+                        await this._PublishEndpoint.Publish<SubmitOrder>(new { ProductQuantities = ProductQuantities, OrderId = NewId.NextGuid(), OrderDate = DateTime.Now });
                       //  await this._PublishEndpoint.Publish<InventoryQuantities>(new InventoryQuantities() { ProductQuantities = ProductQuantities });
                       //  await this._PublishEndpoint.Publish<OrderPaymentMEssage>(new OrderPaymentMEssage() { TotalPrice = request.order.TotalPrice });
 

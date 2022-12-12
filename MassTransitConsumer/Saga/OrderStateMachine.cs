@@ -15,7 +15,6 @@ namespace MassTransitConsumer.Saga
         {
 
             Debug.WriteLine("Here is Order State Machine");
-            Trace.WriteLine("Here is Order State Machine");
 
             InstanceState(x => x.CurrentState);
 
@@ -26,12 +25,12 @@ namespace MassTransitConsumer.Saga
             Initially(
                  When(UpdateInvetory)
                     .Then(x => x.Saga.Quantity = 10)
-                    .Then((context => Debug.WriteLine("UpdateInvetoryyyyy")))
+                    .Then((context => Debug.WriteLine("Update Inventory Event")))
                     .TransitionTo(InventoryUpdated),
                 When(SubmitOrder)
-                    .Then((context => Debug.WriteLine("updatedddd")))
+                    .Then((context => Debug.WriteLine("Submit Order Event")))
                     .Then(x => x.Saga.OrderDate = x.Message.OrderDate)
-                    .Publish(ctx => new InventoryQuantities { ProductQuantities = ctx.Instance.ProductQuantities = ctx.Message.ProductQuantities,OrderId = ctx.Message.OrderId})
+                    .Publish(ctx => new InventoryQuantities { ProductQuantities = ctx.Message.ProductQuantities = ctx.Message.ProductQuantities,OrderId = ctx.Message.OrderId})
                     .TransitionTo(Submitted),
                 When(OrderAccepted)
                     .TransitionTo(Accepted));;
@@ -70,32 +69,4 @@ namespace MassTransitConsumer.Saga
         public int Quantity { get; set; }
     }
 
-    public class OrderStateMachineDefinition :
-    SagaDefinition<OrderState>
-    {
-        public OrderStateMachineDefinition()
-        {
-            ConcurrentMessageLimit = 8;
-            Endpoint(e =>
-            {
-                e.Name = "InventoryQueue";
-                e.PrefetchCount = 8;
-            });
-        }
-
-        protected override void ConfigureSaga(IReceiveEndpointConfigurator endpointConfigurator, ISagaConfigurator<OrderState> sagaConfigurator)
-        {
-            endpointConfigurator.UseMessageRetry(r => r.Interval(5, 1000));
-            endpointConfigurator.UseInMemoryOutbox();
-
-            var partition = endpointConfigurator.CreatePartitioner(8);
-
-            sagaConfigurator.Message<InventoryQuantities>(x => x.UsePartitioner(partition, m => m.Message.OrderId));
-            sagaConfigurator.Message<SubmitOrder>(x => x.UsePartitioner(partition, m => m.Message.OrderId));
-            sagaConfigurator.Message<OrderAccepted>(x => x.UsePartitioner(partition, m => m.Message.OrderId));
-
-            sagaConfigurator.UseMessageRetry(r => r.Immediate(5));
-            sagaConfigurator.UseInMemoryOutbox();
-        }
-    }
 }
