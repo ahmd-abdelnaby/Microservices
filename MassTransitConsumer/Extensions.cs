@@ -36,8 +36,10 @@ namespace MassTransitConsumer
                 // if (!env.HostingEnvironment.IsProduction())
                 if (env.Equals("Development"))
                 {
-                  
-                    var rabbitMqOptions = services.GetOptions<RabbitMqOptions>("RabbitMq");
+                var allTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes()).ToList();
+                var ConsumerTypes = allTypes.Where(x => x.IsAssignableTo(typeof(TConsumer))).ToList();
+
+                var rabbitMqOptions = services.GetOptions<RabbitMqOptions>("RabbitMq");
                     var host = IsRunningInContainer ? "rabbitmq" : rabbitMqOptions.HostName;
 
                     if (rabbitMqOptions.ExchangeType.Equals("Direct")
@@ -46,8 +48,13 @@ namespace MassTransitConsumer
                         services.AddMassTransit(config =>
                         {
 
-                           // config.AddConsumer<TConsumer>();
+                            // config.AddConsumer<TConsumer>();
 
+                            foreach (var consumer in ConsumerTypes)
+                            {
+                                if (!consumer.Name.Equals(typeof(TConsumer).Name))
+                                    config.AddConsumers((Type)consumer);
+                            }
                             //config.AddSagaStateMachine<OrderStateMachine, OrderState>()
                             //            .InMemoryRepository();
                             config.UsingRabbitMq((context, cfg) =>
@@ -57,31 +64,27 @@ namespace MassTransitConsumer
                                     h.Username(rabbitMqOptions.UserName);
                                     h.Password(rabbitMqOptions.Password);
                                 });
-
-                                cfg.ReceiveEndpoint(rabbitMqOptions.QueueName, re =>     //Queue Name
+                               
+                                foreach (var consumer in ConsumerTypes)
                                 {
-                                    
-                                    
-                                 //   re.ConfigureConsumer<TConsumer>(context);
-
-
-                                    //  re.Consumer<TConsumer>();
-
-                                    re.ConfigureConsumeTopology = false;
-                                    // re.SetQuorumQueue();
-                                    if (rabbitMqOptions.IsLasyQueue)
+                                    if (!consumer.Name.Equals(typeof(TConsumer).Name))
                                     {
-                                        re.SetQueueArgument("declare", "lazy");
+
+                                        cfg.ReceiveEndpoint(rabbitMqOptions.QueueName+"_"+consumer.Name, re =>
+                                        {
+                                            re.ConfigureConsumeTopology = false;
+
+                                            re.ConfigureConsumer(context,consumer);
+
+
+                                            re.Bind(rabbitMqOptions.ExchangeName, e =>
+                                            {
+                                                e.RoutingKey = consumer.Name;
+                                                e.ExchangeType = rabbitMqOptions.ExchangeType.Equals("Direct") ? ExchangeType.Direct : ExchangeType.Topic;
+                                            });
+                                        });
                                     }
-
-                                    re.Bind(rabbitMqOptions.ExchangeName, e =>
-                                    {
-                                        e.RoutingKey = rabbitMqOptions.RouteKey;
-                                        e.ExchangeType = rabbitMqOptions.ExchangeType.Equals("Direct") ? ExchangeType.Direct : ExchangeType.Topic;
-                                    });
-
-                                });
-
+                                }
 
                             });
                         });
@@ -91,9 +94,7 @@ namespace MassTransitConsumer
                     {
                         services.AddMassTransit(config =>
                         {
-                            var allTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes()).ToList();
-
-                            var ConsumerTypes = allTypes.Where(x => x.IsAssignableTo(typeof(TConsumer))).ToList();
+                           
 
                             foreach (var consumer in ConsumerTypes)
                             {
