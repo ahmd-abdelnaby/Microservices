@@ -17,4 +17,10 @@ namespace SharedMessages
         public int ProductId { get; set; }
         public int Quantity { get; set; }
     }
+
+    public class InventoryQuantitiesFailed
+    {
+        public List<ProductQuantities> ProductQuantities { get; set; }
+        public Guid OrderId { get; set; }
+    }
 }
