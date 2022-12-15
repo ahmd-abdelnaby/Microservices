@@ -48,6 +48,7 @@ public static class InfrastructureExtensions
     {
         app.UseMiddleware(typeof(ErrorHandlingMiddleware));
         app.UseCors("CorsPolicy");
+        app.UseHealthCheck();
         app.UseHttpsRedirection();
         app.MapControllers();
         app.UseAuthoriz();
