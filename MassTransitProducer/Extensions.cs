@@ -58,7 +58,7 @@ namespace MassTransitProducer
                           (e => e.SetEntityName(rabbitMqOptions.ExchangeName)); // name of the primary exchange
 
                             cfg.Publish<TMessage>
-                            (e => e.ExchangeType = rabbitMqOptions.ExchangeType.Equals("Direct") ? ExchangeType.Fanout : ExchangeType.Fanout); // primary exchange type
+                            (e => e.ExchangeType = rabbitMqOptions.ExchangeType.Equals("Direct") ? ExchangeType.Direct : ExchangeType.Topic); // primary exchange type
 
                             cfg.Send<TMessage>(e =>
                             {
