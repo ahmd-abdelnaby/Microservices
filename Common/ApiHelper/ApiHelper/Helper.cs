@@ -75,20 +75,16 @@ namespace ApiHelper
     {
         using (HttpClient client = new HttpClient(GetHandler()))
         {
-            client.BaseAddress = new Uri(baseUrl);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.BaseAddress = new Uri(baseUrl);
                 try
-            {
-                    var result = client.PostAsJsonAsync(requestUrl, Source).Result;
-                        //new StringContent(
-                        //JsonConvert.SerializeObject(Source), Encoding.UTF8, "application/json")).Result;
-
-                if (result.IsSuccessStatusCode)
                 {
-                    return await result.Content.ReadAsAsync<T>();
+                    var result = client.PostAsJsonAsync(requestUrl, Source).Result;
+                    if (result.IsSuccessStatusCode)
+                    {
+                        return await result.Content.ReadAsAsync<T>();
+                    }
+                    throw new UnSuccesfulRequest(result.StatusCode.ToString());
                 }
-                throw new UnSuccesfulRequest(result.StatusCode.ToString());
-            }
             catch (Exception e)
             {
                 throw e;
