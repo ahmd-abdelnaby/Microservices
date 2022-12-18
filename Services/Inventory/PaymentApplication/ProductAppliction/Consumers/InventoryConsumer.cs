@@ -19,15 +19,17 @@ namespace InventoryAppliction.Consumers
     public class InventoryConsumer : IConsumer<InventoryQuantities>, GenericInventoryConsumer
     {
         private readonly IMediator _mediator;
+        private readonly IPublishEndpoint _PublishEndpoint;
 
-
-        public InventoryConsumer(IMediator mediator)
+        public InventoryConsumer(IMediator mediator, IPublishEndpoint PublishEndpoint)
         {
             _mediator = mediator;
+            _PublishEndpoint = PublishEndpoint;
         }
 
         public async Task Consume(ConsumeContext<InventoryQuantities> context)
         {
+            //await _PublishEndpoint.Publish(new InventoryQuantitiesFailed { OrderId = context.Message.OrderId,ProductQuantities = context.Message.ProductQuantities }); 
              await _mediator.Send( new UpdateInventoryQuantitiesCommand(context.Message));
         }
 

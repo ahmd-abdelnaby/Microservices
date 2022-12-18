@@ -2,6 +2,7 @@
 using MassTransit;
 using MassTransit.Internals;
 using MassTransitConsumer.Saga;
+using MassTransitConsumer.Saga.Persistance;
 using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -14,6 +15,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Microsoft.EntityFrameworkCore;
 using static MassTransit.Logging.OperationName;
 using static MassTransit.Monitoring.Performance.BuiltInCounters;
 using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
@@ -97,8 +99,18 @@ namespace MassTransitConsumer
                     {
                         services.AddMassTransit(config =>
                         {
-                         /*   config.AddSagaStateMachine<OrderStateMachine, OrderState>()
-                                       .InMemoryRepository();*/
+                            config.AddSagaStateMachine<OrderStateMachine, OrderState>(typeof(OrderStateMachineDefinition))
+                            .InMemoryRepository();
+                                      //.EntityFrameworkRepository(r =>
+                                      //{
+                                      //    r.ConcurrencyMode = ConcurrencyMode.Pessimistic;
+
+                                      //    r.AddDbContext<DbContext, StateMachineDbContext>((provider, optionsBuilder) =>
+                                      //    {
+                                      //        optionsBuilder.UseSqlServer("connection string");
+                                      //    });
+
+                                      //});
 
 
 
