@@ -99,8 +99,8 @@ namespace MassTransitConsumer
                     {
                         services.AddMassTransit(config =>
                         {
-                            config.AddSagaStateMachine<OrderStateMachine, OrderState>(typeof(OrderStateMachineDefinition))
-                            .InMemoryRepository();
+                            config.AddSagaStateMachine<OrderStateMachine, OrderState>()
+                                        .InMemoryRepository();
                                       //.EntityFrameworkRepository(r =>
                                       //{
                                       //    r.ConcurrencyMode = ConcurrencyMode.Pessimistic;
@@ -128,15 +128,9 @@ namespace MassTransitConsumer
                                         h.Username(rabbitMqOptions.UserName);
                                         h.Password(rabbitMqOptions.Password);
                                     });
-                                    cfg.ConfigureEndpoints(ctx);
                                     if (ConsumerTypes.Any(x=>x.Name != (typeof(TConsumer).Name)))
                                     {
-                                        // rabbitSettings.QueueName => service-b
-                                        //cfg.ReceiveEndpoint(rabbitMqOptions.QueueName, e =>
-                                        //{
-                                        //    // e.UseConsumeFilter(typeof(InboxFilter<>), context);
-                                        //    e.ConfigureConsumers(ctx);
-                                        //});
+                                        cfg.ConfigureEndpoints(ctx);
                                     }
                                 });
                             
