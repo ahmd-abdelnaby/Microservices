@@ -2,6 +2,7 @@
 using AutoMapper;
 using MassTransit;
 using MassTransitConsumer;
+using MassTransitConsumer.Saga;
 using MediatR;
 using OrderApplication.Commands;
 using OrderApplication.Context;
@@ -31,6 +32,9 @@ namespace OrderApplication.Handlers
         public async Task<bool> Handle(AddOrderCommand request, CancellationToken cancellationToken)
         {
 
+          //  var instance = new OrderState();
+           // var machine = new OrderStateMachine();
+
             var orderProducts = _mapper.Map<List<OrderDetailsDto>, List<ProductModel>>(request.order.Details);
              
             //call Inventory api
@@ -50,8 +54,9 @@ namespace OrderApplication.Handlers
                     if (result> 0)
                     {
 
+                      //  await this._PublishEndpoint.Publish<SubmitOrder>(new { ProductQuantities = ProductQuantities, OrderId = NewId.NextGuid(), OrderDate = DateTime.Now });
                         await this._PublishEndpoint.Publish<InventoryQuantities>(new InventoryQuantities() { ProductQuantities = ProductQuantities });
-                        await this._PublishEndpoint.Publish<OrderPaymentMEssage>(new OrderPaymentMEssage() { TotalPrice = request.order.TotalPrice });
+                      //  await this._PublishEndpoint.Publish<OrderPaymentMEssage>(new OrderPaymentMEssage() { TotalPrice = request.order.TotalPrice });
 
                     _logger.Information("insert order And it is Published To Consumers");
                         return true;

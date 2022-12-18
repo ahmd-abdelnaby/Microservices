@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ConfigurationExtensions\ConfigurationExtensions.csproj" />
+    <ProjectReference Include="..\ProductOrderMessage\SharedMessages.csproj" />
   </ItemGroup>
 
 </Project>

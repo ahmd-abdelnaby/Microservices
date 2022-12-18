@@ -1,6 +1,7 @@
 ﻿using ConfigurationExtensions;
 using MassTransit;
 using MassTransit.Internals;
+using MassTransitConsumer.Saga;
 using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -49,6 +50,8 @@ namespace MassTransitConsumer
                         {
 
                             // config.AddConsumer<TConsumer>();
+                         /*   config.AddSagaStateMachine<OrderStateMachine, OrderState>()
+                                                                   .InMemoryRepository();*/
 
                             foreach (var consumer in ConsumerTypes)
                             {
@@ -70,7 +73,7 @@ namespace MassTransitConsumer
                                     if (!consumer.Name.Equals(typeof(TConsumer).Name))
                                     {
 
-                                        cfg.ReceiveEndpoint(rabbitMqOptions.QueueName+"_"+consumer.Name, re =>
+                                        cfg.ReceiveEndpoint(rabbitMqOptions.QueueName+consumer.Name, re =>
                                         {
                                             re.ConfigureConsumeTopology = false;
 
@@ -94,7 +97,11 @@ namespace MassTransitConsumer
                     {
                         services.AddMassTransit(config =>
                         {
-                           
+                         /*   config.AddSagaStateMachine<OrderStateMachine, OrderState>()
+                                       .InMemoryRepository();*/
+
+
+
 
                             foreach (var consumer in ConsumerTypes)
                             {
@@ -109,14 +116,15 @@ namespace MassTransitConsumer
                                         h.Username(rabbitMqOptions.UserName);
                                         h.Password(rabbitMqOptions.Password);
                                     });
+                                    cfg.ConfigureEndpoints(ctx);
                                     if (ConsumerTypes.Any(x=>x.Name != (typeof(TConsumer).Name)))
                                     {
                                         // rabbitSettings.QueueName => service-b
-                                        cfg.ReceiveEndpoint(rabbitMqOptions.QueueName, e =>
-                                        {
-                                            // e.UseConsumeFilter(typeof(InboxFilter<>), context);
-                                            e.ConfigureConsumers(ctx);
-                                        });
+                                        //cfg.ReceiveEndpoint(rabbitMqOptions.QueueName, e =>
+                                        //{
+                                        //    // e.UseConsumeFilter(typeof(InboxFilter<>), context);
+                                        //    e.ConfigureConsumers(ctx);
+                                        //});
                                     }
                                 });
                             

@@ -20,7 +20,7 @@ public static class InfrastructureExtensions
     {
         webApplicationBuilder.AddMediatR();
         webApplicationBuilder.AddHealthCheck();
-        webApplicationBuilder.Services.AddCustomMassTransitProducer<GenericOrederMessage>( "Development");
+        webApplicationBuilder.Services.AddCustomMassTransitProducer<InventoryQuantities>( "Development");
 
         webApplicationBuilder.Services.AddCors(options =>
         {
