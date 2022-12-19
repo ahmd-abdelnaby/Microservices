@@ -8,7 +8,7 @@ namespace SharedMessages
 {
     public class InventoryQuantities
     {
-     public List<ProductQuantities> ProductQuantities { get; set; }
+        public List<ProductQuantities> ProductQuantities { get; set; }
         public Guid OrderId { get; set; }
     }
 

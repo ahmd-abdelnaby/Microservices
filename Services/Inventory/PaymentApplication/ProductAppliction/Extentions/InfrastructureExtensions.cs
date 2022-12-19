@@ -1,5 +1,5 @@
 ﻿using Logging;
-using MassTransitConsumer;
+using MassTransitHelper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -25,7 +25,7 @@ public static class InfrastructureExtensions
         webApplicationBuilder.AddMediatR();
         webApplicationBuilder.AddHealthCheck();
 
-        webApplicationBuilder.Services.AddCustomMassTransitConsumer<GenericInventoryConsumer, InventoryQuantities>("Development");
+        webApplicationBuilder.Services.AddMassTransit<GenericConsumer>();
 
         webApplicationBuilder.AddAuthoriz();
 

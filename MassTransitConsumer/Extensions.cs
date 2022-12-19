@@ -51,17 +51,11 @@ namespace MassTransitConsumer
                         services.AddMassTransit(config =>
                         {
 
-                            // config.AddConsumer<TConsumer>();
-                         /*   config.AddSagaStateMachine<OrderStateMachine, OrderState>()
-                                                                   .InMemoryRepository();*/
-
                             foreach (var consumer in ConsumerTypes)
                             {
                                 if (!consumer.Name.Equals(typeof(TConsumer).Name))
                                     config.AddConsumers((Type)consumer);
                             }
-                            //config.AddSagaStateMachine<OrderStateMachine, OrderState>()
-                            //            .InMemoryRepository();
                             config.UsingRabbitMq((context, cfg) =>
                             {
                                 cfg.Host(host, h =>
@@ -143,6 +137,43 @@ namespace MassTransitConsumer
                 return services;
           
             }
-        
+
+
+        public static IServiceCollection AddMassTransit<TConsumer>(this IServiceCollection services)
+        {
+
+            var allTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes()).ToList();
+            var ConsumerTypes = allTypes.Where(x => x.IsAssignableTo(typeof(TConsumer))).ToList();
+
+            var rabbitMqOptions = services.GetOptions<RabbitMqOptions>("RabbitMq");
+
+            services.AddMassTransit(config =>
+            {
+                config.AddSagaStateMachine<OrderStateMachine, OrderState>()
+                            .InMemoryRepository();
+
+                foreach (var consumer in ConsumerTypes)
+                {
+                    if (!consumer.Name.Equals(typeof(TConsumer).Name))
+                        config.AddConsumers((Type)consumer);
+                }
+
+                config.UsingRabbitMq((ctx, cfg) =>
+                {
+                    cfg.Host("localhost", h =>
+                    {
+                        h.Username(rabbitMqOptions.UserName);
+                        h.Password(rabbitMqOptions.Password);
+                    });
+                    if (ConsumerTypes.Any(x => x.Name != (typeof(TConsumer).Name)))
+                    {
+                        cfg.ConfigureEndpoints(ctx);
+                    }
+                });
+
+            });
+            return services;
+
+        }
     }
 }

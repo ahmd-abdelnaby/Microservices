@@ -76,5 +76,9 @@ namespace MassTransitProducer
 
             return services;
         }
+
+
+        
     }
+
 }

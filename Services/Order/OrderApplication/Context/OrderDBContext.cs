@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static MassTransit.Logging.OperationName;
-using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace OrderApplication.Context

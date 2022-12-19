@@ -5,7 +5,6 @@ using InventoryDomain.Interfaces;
 using InventoryInfrastructure;
 using MassTransit;
 using MassTransit.SagaStateMachine;
-using MassTransitConsumer;
 using MediatR;
 using SharedMessages;
 using System;

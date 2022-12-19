@@ -5,7 +5,7 @@ using InventoryDomain.Interfaces;
 using InventoryInfrastructure;
 using MassTransit;
 using MassTransit.SagaStateMachine;
-using MassTransitConsumer;
+using MassTransitHelper;
 using MediatR;
 using SharedMessages;
 using System;
@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace InventoryAppliction.Consumers
 {
-    public class InventoryConsumer : IConsumer<InventoryQuantities>, GenericInventoryConsumer
+    public class InventoryConsumer : IConsumer<InventoryQuantities>, GenericConsumer
     {
         private readonly IMediator _mediator;
         private readonly IPublishEndpoint _PublishEndpoint;
@@ -29,7 +29,6 @@ namespace InventoryAppliction.Consumers
 
         public async Task Consume(ConsumeContext<InventoryQuantities> context)
         {
-            //await _PublishEndpoint.Publish(new InventoryQuantitiesFailed { OrderId = context.Message.OrderId,ProductQuantities = context.Message.ProductQuantities }); 
              await _mediator.Send( new UpdateInventoryQuantitiesCommand(context.Message));
         }
 

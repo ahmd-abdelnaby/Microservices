@@ -30,8 +30,7 @@
     <ProjectReference Include="..\..\..\Common\ApiHelper\ApiHelper\ApiHelper.csproj" />
     <ProjectReference Include="..\..\..\Common\ErrorHandling\ErrorHandling.csproj" />
     <ProjectReference Include="..\..\..\Common\Logging\Logging.csproj" />
-    <ProjectReference Include="..\..\..\MassTransitConsumer\MassTransitConsumer.csproj" />
-    <ProjectReference Include="..\..\..\MassTransitProducer\MassTransitProducer.csproj" />
+    <ProjectReference Include="..\..\..\MassTransitHelper\MassTransitHelper.csproj" />
     <ProjectReference Include="..\..\..\ProductOrderMessage\SharedMessages.csproj" />
   </ItemGroup>
 

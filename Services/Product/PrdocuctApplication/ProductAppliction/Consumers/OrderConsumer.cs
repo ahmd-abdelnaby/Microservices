@@ -1,5 +1,5 @@
 ﻿using MassTransit;
-using MassTransitConsumer;
+using MassTransitHelper;
 using ProductAppliction.Models;
 using System;
 using System.Collections.Generic;

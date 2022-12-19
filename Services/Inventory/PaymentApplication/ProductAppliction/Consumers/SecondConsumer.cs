@@ -1,6 +1,6 @@
 ﻿using InventoryAppliction.Commands;
 using MassTransit;
-using MassTransitConsumer;
+using MassTransitHelper;
 using MediatR;
 using SharedMessages;
 using System;
