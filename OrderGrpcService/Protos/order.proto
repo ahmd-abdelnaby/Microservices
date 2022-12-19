@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "OrderGrpcService";
+
+package order;
+
+import "google/protobuf/timestamp.proto";
+
+service OrderServices {
+  rpc GetOrderByOrderId (OrderIdRequest) returns (stream OrderListResponse) {};
+}
+
+message OrderIdRequest {
+  int32 Id = 1;
+}
+
+message OrderListResponse {
+Order  order = 1;
+}
+
+message Order {
+        int32 id  = 1;
+        google.protobuf.Timestamp OrderDate = 2;
+        double TotalPrice = 3 ;
+        int32 OrderStatus = 4;
+        //google.protobuf.Timestamp PaymentDate =5;
+}

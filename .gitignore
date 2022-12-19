@@ -38,3 +38,5 @@ packages
 /Services/Order/OrderApi/Properties/PublishProfiles
 /Services/Payment/PaymentApi/logs
 /PaymentGrpcService/logs
+/Helathcheck/logs
+/InventoryGrpcService/logs

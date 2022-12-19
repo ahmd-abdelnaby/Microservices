@@ -7,14 +7,9 @@ Console.WriteLine("Hello, World!");
 Console.ReadLine();
 using var channel = GrpcChannel.ForAddress("https://localhost:5001");
 
-var client = new PaymentGrpcService.PaymentServices.PaymentServicesClient(channel);
+var client = new InventoryGrpcService.InventoryServices.InventoryServicesClient(channel);
 
-var response = client.PaymentDetailsByOrderId(new PaymentGrpcService.OrderIdRequest() { Id = 2});
-
-while (response.ResponseStream.MoveNext().Result)
-{
-    Console.WriteLine(response.ResponseStream.Current.Payment.ToString());
-}
+//var client = new PaymentGrpcService.PaymentServices.PaymentServicesClient(channel);
 
 Console.WriteLine("Finished");
 Console.ReadLine();

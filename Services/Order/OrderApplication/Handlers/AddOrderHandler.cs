@@ -1,5 +1,9 @@
 ﻿using ApiHelper;
 using AutoMapper;
+using Google.Protobuf.Collections;
+using Grpc.Core;
+using Grpc.Net.Client;
+using InventoryGrpcService;
 using MassTransit;
 using MassTransitConsumer;
 using MediatR;
@@ -10,6 +14,7 @@ using OrderApplication.Enums;
 using OrderApplication.Models;
 using Serilog;
 using SharedMessages;
+using ProductModel = OrderApplication.DTO.ProductModel;
 
 namespace OrderApplication.Handlers
 {
@@ -25,42 +30,52 @@ namespace OrderApplication.Handlers
             _logger = logger;
             _PublishEndpoint = PublishEndpoint;
             _Context = Context;
-            _mapper= mapper;    
+            _mapper = mapper;
 
         }
         public async Task<bool> Handle(AddOrderCommand request, CancellationToken cancellationToken)
         {
-
             var orderProducts = _mapper.Map<List<OrderDetailsDto>, List<ProductModel>>(request.order.Details);
-             
-            //call Inventory api
-              var api = new ApiClient<List<ProductModel>, List<ProductAvaliblity>>("Inventory/CehckAvalibleProductQuntity", "https://localhost:7121/api/");
-              var data = await api.Post(orderProducts);
-              if (!(data.Where(x => !x.Avalible).Any()))
+
+            using var channel = GrpcChannel.ForAddress("https://localhost:5001");
+            var client = new InventoryGrpcService.InventoryServices.InventoryServicesClient(channel);
+
+            ProductModelRequest productModelRequest = new ProductModelRequest();
+            foreach (var order in orderProducts)
+                productModelRequest.ProductModel.Add(new InventoryGrpcService.ProductModel { ProductId = order.Id, Quantity = order.Quantity });
+
+
+            var response = client.CheckAvalibleProductQuntity(productModelRequest);
+
+
+            var productAvaliblity = _mapper.Map<RepeatedField<ProductAvaliblityResponseModel>,
+                List<ProductAvaliblity>>(response.ProductAvaliblityResponseModels);
+
+            if (!(productAvaliblity.Where(x => !x.Avalible).Any()))
+            {
+
+                var order = _mapper.Map<OrderDto, Order>(request.order);
+
+                var ProductQuantities = _mapper.Map<List<OrderDetailsDto>, List<ProductQuantities>>
+                    (request.order.Details);
+
+
+                await _Context.Orders.AddAsync(order);
+                var result = _Context.SaveChanges();
+                if (result > 0)
                 {
 
-                    var order = _mapper.Map<OrderDto, Order>(request.order);
-                 
-                    var ProductQuantities = _mapper.Map<List<OrderDetailsDto>,List<ProductQuantities>>
-                        (request.order.Details);
+                    await this._PublishEndpoint.Publish<InventoryQuantities>(new InventoryQuantities() { ProductQuantities = ProductQuantities });
 
-       
-                    await _Context.Orders.AddAsync(order);
-                    var result = _Context.SaveChanges();
-                    if (result> 0)
-                    {
-
-                        await this._PublishEndpoint.Publish<InventoryQuantities>(new InventoryQuantities() { ProductQuantities = ProductQuantities });
-
-                        _logger.Information("insert order And it is Published To Consumers");
-                        return true;
-                    }
-                    else
-                        return false;
+                    _logger.Information("insert order And it is Published To Consumers");
+                    return true;
                 }
                 else
                     return false;
-           
+            }
+            else
+                return false;
+
         }
     }
 }

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "InventoryGrpcService";
+
+package inventory;
+
+service InventoryServices {
+  rpc CheckAvalibleProductQuntity (ProductModelRequest) returns (ProductAvaliblityResponse);
+}
+
+message ProductModelRequest {
+repeated ProductModel ProductModel  = 1;
+}
+
+message ProductAvaliblityResponse {
+ repeated  ProductAvaliblityResponseModel ProductAvaliblityResponseModels = 1;
+}
+
+message ProductAvaliblityResponseModel
+{
+  int32 Id = 1;
+  bool Avalible = 2;
+  string Reason = 3;
+}
+
+message ProductModel {
+   int32 ProductId  = 1;
+   int32 Quantity = 2;
+}

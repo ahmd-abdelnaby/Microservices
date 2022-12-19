@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Protos\payment.proto" />
+    <None Remove="Protos\inventory.proto" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,8 +18,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Protobuf Include="Protos\inventory.proto" GrpcServices="Client" />
-	<Protobuf Include="Protos\payment.proto" GrpcServices="Client" />
   </ItemGroup>
 
 </Project>

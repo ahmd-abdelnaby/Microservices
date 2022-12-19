@@ -18,8 +18,8 @@ public static class InfrastructureExtensions
 {
     public static WebApplicationBuilder AddInfrastructure( this WebApplicationBuilder  webApplicationBuilder)
     {
-        webApplicationBuilder.AddMediatR();
-        webApplicationBuilder.AddHealthCheck();
+        //webApplicationBuilder.AddMediatR();
+        //webApplicationBuilder.AddHealthCheck();
         webApplicationBuilder.Services.AddCustomMassTransitProducer<InventoryQuantities>( "Development");
 
         webApplicationBuilder.Services.AddCors(options =>

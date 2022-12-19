@@ -1,4 +1,7 @@
-﻿using MediatR;
+﻿using Grpc.Core;
+using Grpc.Net.Client;
+using MediatR;
+using OrderGrpcService;
 using PaymentAppliction.Commands;
 using PaymentAppliction.Events;
 using PaymentDomain.Entities;
@@ -23,11 +26,26 @@ namespace PaymentAppliction.Handlers
         public async Task<PaymentModel> Handle(AddPaymentCommand request, CancellationToken cancellationToken)
         {
             _logger.Information("insert Payment");
+
+            using var channel = GrpcChannel.ForAddress("https://localhost:5001");
+
+            var client = new OrderServices.OrderServicesClient(channel);
+
+            var response = client.GetOrderByOrderId(new OrderGrpcService.OrderIdRequest() { Id = request.PaymentModel.OrderId });
+
+            Order? order  = null;
+
+            while (response.ResponseStream.MoveNext().Result)
+            {
+                order = response.ResponseStream.Current.Order;
+            }
+
+            decimal Amount = decimal.TryParse(order?.TotalPrice.ToString(), out Amount) ? Amount : 0;
             await _unitOfWork.Repository<Payment>().InsertAsync(
                 new Payment
                 {
                     Id = request.PaymentModel.Id,
-                    Amount = request.PaymentModel.Amount,
+                    Amount = Amount,
                     Date = request.PaymentModel.Date,
                     OrderId = request.PaymentModel.OrderId,
                     Status = request.PaymentModel.Status

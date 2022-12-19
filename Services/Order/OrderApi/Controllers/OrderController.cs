@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using OrderApplication;
 using OrderApplication.Commands;
@@ -10,6 +11,8 @@ namespace OrderApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [AllowAnonymous]
+    [DisableCors]
     public class OrderController : ControllerBase
     {
         private readonly ILogger<OrderController> _logger;
@@ -37,6 +40,7 @@ namespace OrderApi.Controllers
 
         }
         [HttpPost]
+        [Route("AddOrder")]
         public async Task<bool> PostAsync(OrderDto order)
         {
             try

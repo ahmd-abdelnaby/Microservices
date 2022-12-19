@@ -1,0 +1,8 @@
+﻿01:01:00 [INFO] Now listening on: https://localhost:5001
+01:01:01 [INFO] Application started. Press Ctrl+C to shut down.
+01:01:01 [INFO] Hosting environment: Development
+01:01:01 [INFO] Content root path: E:\Project\PoC Microservice\Microservices\OrderGrpcService\
+01:27:44 [INFO] Now listening on: https://localhost:5001
+01:27:44 [INFO] Application started. Press Ctrl+C to shut down.
+01:27:44 [INFO] Hosting environment: Development
+01:27:44 [INFO] Content root path: E:\Project\PoC Microservice\Microservices\OrderGrpcService\
