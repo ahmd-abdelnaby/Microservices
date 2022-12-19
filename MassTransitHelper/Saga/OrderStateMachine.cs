@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MassTransitConsumer.Saga
+namespace MassTransitHelper.Saga
 {
     public class OrderStateMachine : MassTransitStateMachine<OrderState>
     {
@@ -45,7 +45,7 @@ namespace MassTransitConsumer.Saga
                     .Finalize());
         }
 
-        public Event<SubmitOrder> SubmitOrder { get; private set; }
+        public Event<SharedMessages.SubmitOrder> SubmitOrder { get; private set; }
         public Event<OrderAccepted> OrderAccepted { get; private set; }
         public Event<InventoryQuantities> UpdateInvetory { get; private set; }
         public Event<InventoryQuantitiesFailed> InventoryQuantitiesFailed { get; private set; }

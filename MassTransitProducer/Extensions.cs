@@ -7,6 +7,7 @@ using RabbitMQ.Client;
 using System.Reflection;
 //using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using MassTransitConsumer.Saga;
 
 namespace MassTransitProducer
 {
@@ -30,6 +31,9 @@ namespace MassTransitProducer
 
                 services.AddMassTransit(config =>
                 {
+                    //config.AddSagaStateMachine<OrderStateMachine, OrderState>(typeof(OrderStateMachineDefinition))
+                    //                    .InMemoryRepository();
+
                     config.UsingRabbitMq((context, cfg) =>
                     {
 
@@ -41,10 +45,15 @@ namespace MassTransitProducer
                             h.Username(rabbitMqOptions.UserName);
                             h.Password(rabbitMqOptions.Password);
                         });
-
+                        //cfg.ConfigureEndpoints(context);
                         if (rabbitMqOptions.ExchangeType.Equals("Direct")
                        || rabbitMqOptions.ExchangeType.Equals("Topic"))
                         {
+
+                            var allTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes()).ToList();
+
+                            var MessageTypes = allTypes.Where(x => x.IsAssignableTo(typeof(TMessage))).ToList();
+
                             cfg.Message<TMessage>
                           (e => e.SetEntityName(rabbitMqOptions.ExchangeName)); // name of the primary exchange
 
@@ -67,5 +76,9 @@ namespace MassTransitProducer
 
             return services;
         }
+
+
+        
     }
+
 }

@@ -5,13 +5,14 @@ using Grpc.Core;
 using Grpc.Net.Client;
 using InventoryGrpcService;
 using MassTransit;
-using MassTransitConsumer;
 using MediatR;
+using Microsoft.Extensions.Options;
 using OrderApplication.Commands;
 using OrderApplication.Context;
 using OrderApplication.DTO;
 using OrderApplication.Enums;
 using OrderApplication.Models;
+using OrderApplication.Settings;
 using Serilog;
 using SharedMessages;
 using ProductModel = OrderApplication.DTO.ProductModel;
@@ -24,13 +25,14 @@ namespace OrderApplication.Handlers
         private readonly IPublishEndpoint _PublishEndpoint;
         private readonly OrderDBContext _Context;
         private readonly IMapper _mapper;
-
-        public AddOrderHandler(ILogger logger, IPublishEndpoint PublishEndpoint, OrderDBContext Context, IMapper mapper)
+        private readonly InventorySettings _inventorySettings;
+        public AddOrderHandler(ILogger logger, IPublishEndpoint PublishEndpoint, OrderDBContext Context, IMapper mapper, IOptions<InventorySettings> inventorySettings)
         {
             _logger = logger;
             _PublishEndpoint = PublishEndpoint;
             _Context = Context;
-            _mapper = mapper;
+            _mapper= mapper;
+            _inventorySettings = inventorySettings.Value;
 
         }
         public async Task<bool> Handle(AddOrderCommand request, CancellationToken cancellationToken)

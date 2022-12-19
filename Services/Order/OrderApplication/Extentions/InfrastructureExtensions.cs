@@ -1,6 +1,5 @@
 ﻿using Logging;
-using MassTransitConsumer;
-using MassTransitProducer;
+using MassTransitHelper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -12,16 +11,17 @@ using OrderApplication;
 using OrderApplication.AutoMapper;
 using OrderApplication.Context;
 using OrderApplication.Extentions;
+using OrderApplication.Settings;
 using SharedMessages;
+using System.Configuration;
 
 public static class InfrastructureExtensions
 {
     public static WebApplicationBuilder AddInfrastructure( this WebApplicationBuilder  webApplicationBuilder)
     {
-        //webApplicationBuilder.AddMediatR();
-        //webApplicationBuilder.AddHealthCheck();
-        webApplicationBuilder.Services.AddCustomMassTransitProducer<InventoryQuantities>( "Development");
-
+        webApplicationBuilder.AddMediatR();
+        webApplicationBuilder.AddHealthCheck();
+        webApplicationBuilder.Services.AddMassTransit<GenericConsumer>();
         webApplicationBuilder.Services.AddCors(options =>
         {
             options.AddPolicy("CorsPolicy",
@@ -38,6 +38,7 @@ public static class InfrastructureExtensions
         webApplicationBuilder.Services.AddTransient<LoggingService>();
 
         webApplicationBuilder.Services.AddAutoMapper(typeof(AutoMapperConfig));
+        webApplicationBuilder.Services.Configure<InventorySettings>(webApplicationBuilder.Configuration.GetSection("InventorySettings"));
 
         return webApplicationBuilder;
     }
@@ -45,6 +46,7 @@ public static class InfrastructureExtensions
     {
         app.UseMiddleware(typeof(ErrorHandlingMiddleware));
         app.UseCors("CorsPolicy");
+        app.UseHealthCheck();
         app.UseHttpsRedirection();
         app.MapControllers();
         app.UseAuthoriz();

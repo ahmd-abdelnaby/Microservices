@@ -34,7 +34,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Common\ErrorHandling\ErrorHandling.csproj" />
     <ProjectReference Include="..\..\..\..\Common\Logging\Logging.csproj" />
-    <ProjectReference Include="..\..\..\..\MassTransitConsumer\MassTransitConsumer.csproj" />
+    <ProjectReference Include="..\..\..\..\MassTransitHelper\MassTransitHelper.csproj" />
     <ProjectReference Include="..\..\PaymentInfrastructure\PaymentInfrastructure.csproj" />
   </ItemGroup>
 

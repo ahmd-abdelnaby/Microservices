@@ -1,4 +1,5 @@
-﻿using Logging;
+﻿using InventoryAppliction.Commands;
+using Logging;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,7 +10,7 @@ public static class MediatRExtensions
     public static WebApplicationBuilder AddMediatR(this WebApplicationBuilder webApplicationBuilder)
     {
         webApplicationBuilder.Services.AddMediatR(Assembly.GetExecutingAssembly());
-        webApplicationBuilder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+        webApplicationBuilder.Services.AddSingleton(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
         return webApplicationBuilder;
     }
     public static WebApplication UseMediatR(this WebApplication app)

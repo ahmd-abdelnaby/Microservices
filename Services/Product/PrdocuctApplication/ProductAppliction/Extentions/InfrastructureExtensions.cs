@@ -1,5 +1,5 @@
 ﻿using Logging;
-using MassTransitConsumer;
+using MassTransitHelper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
